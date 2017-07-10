@@ -1,0 +1,653 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		016F2CF4F83B51389E77F067 /* libPods-AgoraVRTCDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F48460C3454871138355D4D8 /* libPods-AgoraVRTCDemo.a */; };
+		8EC4B4AE363BF0CE37B2FA31 /* libPods-KMCAgoraVRTCDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6F185B71E47BF491D28422 /* libPods-KMCAgoraVRTCDemo.a */; };
+		9540A4361F136C27005882DA /* KMCAgoraVRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9540A4351F136C27005882DA /* KMCAgoraVRTC.framework */; };
+		9540A4381F136C82005882DA /* KMCAgoraVRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9540A4351F136C27005882DA /* KMCAgoraVRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95C902791F0CCADE00AC1FAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C902781F0CCADE00AC1FAA /* main.m */; };
+		95C9027C1F0CCADE00AC1FAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C9027B1F0CCADE00AC1FAA /* AppDelegate.m */; };
+		95C9027F1F0CCADE00AC1FAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C9027E1F0CCADE00AC1FAA /* ViewController.m */; };
+		95C902821F0CCADE00AC1FAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C902801F0CCADE00AC1FAA /* Main.storyboard */; };
+		95C902841F0CCADE00AC1FAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C902831F0CCADE00AC1FAA /* Assets.xcassets */; };
+		95C902871F0CCADE00AC1FAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C902851F0CCADE00AC1FAA /* LaunchScreen.storyboard */; };
+		95C902DD1F0CD1C400AC1FAA /* KSYFileSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C902BF1F0CD1C400AC1FAA /* KSYFileSelector.m */; };
+		95C902DE1F0CD1C400AC1FAA /* KSYNameSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C902C11F0CD1C400AC1FAA /* KSYNameSlider.m */; };
+		95C902E01F0CD1C400AC1FAA /* KSYUIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C902C51F0CD1C400AC1FAA /* KSYUIVC.m */; };
+		95C902E11F0CD1C400AC1FAA /* KSYUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C902C71F0CD1C400AC1FAA /* KSYUIView.m */; };
+		95C902E21F0CD1C400AC1FAA /* KSYCtrlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C902CA1F0CD1C400AC1FAA /* KSYCtrlView.m */; };
+		95C902E31F0CD1C400AC1FAA /* KSYFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C902CC1F0CD1C400AC1FAA /* KSYFilterView.m */; };
+		95C902E51F0CD1C400AC1FAA /* KSYMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C902D01F0CD1C400AC1FAA /* KSYMenuView.m */; };
+		95C902E61F0CD1C400AC1FAA /* KSYPresetCfgVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C902D21F0CD1C400AC1FAA /* KSYPresetCfgVC.m */; };
+		95C902E71F0CD1C400AC1FAA /* KSYPresetCfgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C902D41F0CD1C400AC1FAA /* KSYPresetCfgView.m */; };
+		95C902E81F0CD1C400AC1FAA /* KSYRTCAgoraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C902D61F0CD1C400AC1FAA /* KSYRTCAgoraVC.m */; };
+		95C902E91F0CD1C400AC1FAA /* KSYRtcView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C902D81F0CD1C400AC1FAA /* KSYRtcView.m */; };
+		95C902EA1F0CD1C400AC1FAA /* KSYStateLableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C902DA1F0CD1C400AC1FAA /* KSYStateLableView.m */; };
+		95C902EB1F0CD1C400AC1FAA /* KSYStreamerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C902DC1F0CD1C400AC1FAA /* KSYStreamerVC.m */; };
+		95C903471F0DDC3F00AC1FAA /* KSYAgoraStreamerKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C902B81F0CD1A300AC1FAA /* KSYAgoraStreamerKit.m */; };
+		95C903861F0E15A800AC1FAA /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 95C903851F0E15A800AC1FAA /* mask.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		95C903711F0E0EAD00AC1FAA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9540A4381F136C82005882DA /* KMCAgoraVRTC.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		22A2C26FE45198735689D118 /* Pods-KMCAgoraVRTCDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMCAgoraVRTCDemo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-KMCAgoraVRTCDemo/Pods-KMCAgoraVRTCDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		2C05614031FD9F25B0EE33B6 /* Pods-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-demo/Pods-demo.debug.xcconfig"; sourceTree = "<group>"; };
+		3CF1609DE91E94161AC742D0 /* libPods-demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F2F3EDD38EAF559C9131C1F /* Pods-auth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-auth.release.xcconfig"; path = "../Pods/Target Support Files/Pods-auth/Pods-auth.release.xcconfig"; sourceTree = "<group>"; };
+		4F59B4F483CE42F6F81BF3B7 /* libPods-auth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-auth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		569B2B5FD7FB088D5323C758 /* Pods-KMCAgoraVRTCDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMCAgoraVRTCDemo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-KMCAgoraVRTCDemo/Pods-KMCAgoraVRTCDemo.release.xcconfig"; sourceTree = "<group>"; };
+		5CEC9B98B4B77AC4924EDFBD /* Pods-auth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-auth.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-auth/Pods-auth.debug.xcconfig"; sourceTree = "<group>"; };
+		65DB1CA539605CC32E18E460 /* Pods-AgoraVRTCDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgoraVRTCDemo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-AgoraVRTCDemo/Pods-AgoraVRTCDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		6BA8B95474B93EBEC5276508 /* libPods-KMCAgoraVRTC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KMCAgoraVRTC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7809EF0660C69DA7E2C75DA2 /* Pods-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-demo/Pods-demo.release.xcconfig"; sourceTree = "<group>"; };
+		8B2BB8AEF05E6FB5DEE09DEF /* libPods-Auth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Auth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94E233FB85E25E9553291B43 /* Pods-AgoraVRTC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgoraVRTC.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-AgoraVRTC/Pods-AgoraVRTC.debug.xcconfig"; sourceTree = "<group>"; };
+		9540A4351F136C27005882DA /* KMCAgoraVRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KMCAgoraVRTC.framework; sourceTree = "<group>"; };
+		95C902751F0CCADE00AC1FAA /* KMCAgoraVRTCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KMCAgoraVRTCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		95C902781F0CCADE00AC1FAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		95C9027A1F0CCADE00AC1FAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		95C9027B1F0CCADE00AC1FAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		95C9027D1F0CCADE00AC1FAA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		95C9027E1F0CCADE00AC1FAA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		95C902811F0CCADE00AC1FAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		95C902831F0CCADE00AC1FAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		95C902861F0CCADE00AC1FAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		95C902881F0CCADE00AC1FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95C902B71F0CD1A300AC1FAA /* KSYAgoraStreamerKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSYAgoraStreamerKit.h; path = ../AgoraVRTC/KSYAgoraStreamerKit.h; sourceTree = "<group>"; };
+		95C902B81F0CD1A300AC1FAA /* KSYAgoraStreamerKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSYAgoraStreamerKit.m; path = ../AgoraVRTC/KSYAgoraStreamerKit.m; sourceTree = "<group>"; };
+		95C902BE1F0CD1C400AC1FAA /* KSYFileSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYFileSelector.h; sourceTree = "<group>"; };
+		95C902BF1F0CD1C400AC1FAA /* KSYFileSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYFileSelector.m; sourceTree = "<group>"; };
+		95C902C01F0CD1C400AC1FAA /* KSYNameSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYNameSlider.h; sourceTree = "<group>"; };
+		95C902C11F0CD1C400AC1FAA /* KSYNameSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYNameSlider.m; sourceTree = "<group>"; };
+		95C902C41F0CD1C400AC1FAA /* KSYUIVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYUIVC.h; sourceTree = "<group>"; };
+		95C902C51F0CD1C400AC1FAA /* KSYUIVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYUIVC.m; sourceTree = "<group>"; };
+		95C902C61F0CD1C400AC1FAA /* KSYUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYUIView.h; sourceTree = "<group>"; };
+		95C902C71F0CD1C400AC1FAA /* KSYUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYUIView.m; sourceTree = "<group>"; };
+		95C902C91F0CD1C400AC1FAA /* KSYCtrlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYCtrlView.h; sourceTree = "<group>"; };
+		95C902CA1F0CD1C400AC1FAA /* KSYCtrlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYCtrlView.m; sourceTree = "<group>"; };
+		95C902CB1F0CD1C400AC1FAA /* KSYFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYFilterView.h; sourceTree = "<group>"; };
+		95C902CC1F0CD1C400AC1FAA /* KSYFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYFilterView.m; sourceTree = "<group>"; };
+		95C902CF1F0CD1C400AC1FAA /* KSYMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYMenuView.h; sourceTree = "<group>"; };
+		95C902D01F0CD1C400AC1FAA /* KSYMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYMenuView.m; sourceTree = "<group>"; };
+		95C902D11F0CD1C400AC1FAA /* KSYPresetCfgVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYPresetCfgVC.h; sourceTree = "<group>"; };
+		95C902D21F0CD1C400AC1FAA /* KSYPresetCfgVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYPresetCfgVC.m; sourceTree = "<group>"; };
+		95C902D31F0CD1C400AC1FAA /* KSYPresetCfgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYPresetCfgView.h; sourceTree = "<group>"; };
+		95C902D41F0CD1C400AC1FAA /* KSYPresetCfgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYPresetCfgView.m; sourceTree = "<group>"; };
+		95C902D51F0CD1C400AC1FAA /* KSYRTCAgoraVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYRTCAgoraVC.h; sourceTree = "<group>"; };
+		95C902D61F0CD1C400AC1FAA /* KSYRTCAgoraVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYRTCAgoraVC.m; sourceTree = "<group>"; };
+		95C902D71F0CD1C400AC1FAA /* KSYRtcView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYRtcView.h; sourceTree = "<group>"; };
+		95C902D81F0CD1C400AC1FAA /* KSYRtcView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYRtcView.m; sourceTree = "<group>"; };
+		95C902D91F0CD1C400AC1FAA /* KSYStateLableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYStateLableView.h; sourceTree = "<group>"; };
+		95C902DA1F0CD1C400AC1FAA /* KSYStateLableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYStateLableView.m; sourceTree = "<group>"; };
+		95C902DB1F0CD1C400AC1FAA /* KSYStreamerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYStreamerVC.h; sourceTree = "<group>"; };
+		95C902DC1F0CD1C400AC1FAA /* KSYStreamerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYStreamerVC.m; sourceTree = "<group>"; };
+		95C902FC1F0CD48D00AC1FAA /* KMCDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMCDefines.h; sourceTree = "<group>"; };
+		95C9032A1F0CDE9D00AC1FAA /* basic_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = basic_types.h; sourceTree = "<group>"; };
+		95C9032B1F0CDE9D00AC1FAA /* compare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = compare.h; sourceTree = "<group>"; };
+		95C9032C1F0CDE9D00AC1FAA /* compare_row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = compare_row.h; sourceTree = "<group>"; };
+		95C9032D1F0CDE9D00AC1FAA /* convert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = convert.h; sourceTree = "<group>"; };
+		95C9032E1F0CDE9D00AC1FAA /* convert_argb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = convert_argb.h; sourceTree = "<group>"; };
+		95C9032F1F0CDE9D00AC1FAA /* convert_from.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = convert_from.h; sourceTree = "<group>"; };
+		95C903301F0CDE9D00AC1FAA /* convert_from_argb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = convert_from_argb.h; sourceTree = "<group>"; };
+		95C903311F0CDE9D00AC1FAA /* cpu_id.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpu_id.h; sourceTree = "<group>"; };
+		95C903321F0CDE9D00AC1FAA /* libyuv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libyuv.h; sourceTree = "<group>"; };
+		95C903331F0CDE9D00AC1FAA /* mjpeg_decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mjpeg_decoder.h; sourceTree = "<group>"; };
+		95C903341F0CDE9D00AC1FAA /* planar_functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = planar_functions.h; sourceTree = "<group>"; };
+		95C903351F0CDE9D00AC1FAA /* rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rotate.h; sourceTree = "<group>"; };
+		95C903361F0CDE9D00AC1FAA /* rotate_argb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rotate_argb.h; sourceTree = "<group>"; };
+		95C903371F0CDE9D00AC1FAA /* rotate_row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rotate_row.h; sourceTree = "<group>"; };
+		95C903381F0CDE9D00AC1FAA /* row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = row.h; sourceTree = "<group>"; };
+		95C903391F0CDE9D00AC1FAA /* scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scale.h; sourceTree = "<group>"; };
+		95C9033A1F0CDE9D00AC1FAA /* scale_argb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scale_argb.h; sourceTree = "<group>"; };
+		95C9033B1F0CDE9D00AC1FAA /* scale_row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scale_row.h; sourceTree = "<group>"; };
+		95C9033C1F0CDE9D00AC1FAA /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
+		95C9033D1F0CDE9D00AC1FAA /* video_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video_common.h; sourceTree = "<group>"; };
+		95C903421F0CFE2A00AC1FAA /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		95C903541F0E05BC00AC1FAA /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		95C903561F0E062D00AC1FAA /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		95C903581F0E068500AC1FAA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		95C9035A1F0E06FE00AC1FAA /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		95C9035C1F0E074D00AC1FAA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		95C9035E1F0E078900AC1FAA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		95C903601F0E07C400AC1FAA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		95C903621F0E081A00AC1FAA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		95C903641F0E084200AC1FAA /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		95C903661F0E086800AC1FAA /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		95C903681F0E086E00AC1FAA /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		95C9036A1F0E089B00AC1FAA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		95C903851F0E15A800AC1FAA /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
+		ACCF27B0874F3EA3F385092D /* libPods-AgoraVRTC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AgoraVRTC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC2D88702C3A45AD793D4B9E /* Pods-AgoraVRTCDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgoraVRTCDemo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-AgoraVRTCDemo/Pods-AgoraVRTCDemo.release.xcconfig"; sourceTree = "<group>"; };
+		DD0294B36BEDC4E6B230563C /* libPods-KMCAuth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KMCAuth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F36EF6DC84C986C17DDB04FB /* Pods-AgoraVRTC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgoraVRTC.release.xcconfig"; path = "../Pods/Target Support Files/Pods-AgoraVRTC/Pods-AgoraVRTC.release.xcconfig"; sourceTree = "<group>"; };
+		F48460C3454871138355D4D8 /* libPods-AgoraVRTCDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AgoraVRTCDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB6F185B71E47BF491D28422 /* libPods-KMCAgoraVRTCDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KMCAgoraVRTCDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		95C902721F0CCADE00AC1FAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9540A4361F136C27005882DA /* KMCAgoraVRTC.framework in Frameworks */,
+				016F2CF4F83B51389E77F067 /* libPods-AgoraVRTCDemo.a in Frameworks */,
+				8EC4B4AE363BF0CE37B2FA31 /* libPods-KMCAgoraVRTCDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0BF331484BE4569406E340A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95C9036A1F0E089B00AC1FAA /* CoreGraphics.framework */,
+				95C903681F0E086E00AC1FAA /* CoreMotion.framework */,
+				95C903661F0E086800AC1FAA /* CoreTelephony.framework */,
+				95C903641F0E084200AC1FAA /* CoreMedia.framework */,
+				95C903621F0E081A00AC1FAA /* AudioToolbox.framework */,
+				95C903601F0E07C400AC1FAA /* QuartzCore.framework */,
+				95C9035E1F0E078900AC1FAA /* UIKit.framework */,
+				95C9035C1F0E074D00AC1FAA /* AVFoundation.framework */,
+				95C9035A1F0E06FE00AC1FAA /* GLKit.framework */,
+				95C903581F0E068500AC1FAA /* OpenGLES.framework */,
+				95C903561F0E062D00AC1FAA /* CoreVideo.framework */,
+				95C903541F0E05BC00AC1FAA /* VideoToolbox.framework */,
+				95C903421F0CFE2A00AC1FAA /* libstdc++.tbd */,
+				ACCF27B0874F3EA3F385092D /* libPods-AgoraVRTC.a */,
+				F48460C3454871138355D4D8 /* libPods-AgoraVRTCDemo.a */,
+				4F59B4F483CE42F6F81BF3B7 /* libPods-auth.a */,
+				3CF1609DE91E94161AC742D0 /* libPods-demo.a */,
+				8B2BB8AEF05E6FB5DEE09DEF /* libPods-Auth.a */,
+				6BA8B95474B93EBEC5276508 /* libPods-KMCAgoraVRTC.a */,
+				DD0294B36BEDC4E6B230563C /* libPods-KMCAuth.a */,
+				FB6F185B71E47BF491D28422 /* libPods-KMCAgoraVRTCDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2DC2157DC4A16BC8C73E7386 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				94E233FB85E25E9553291B43 /* Pods-AgoraVRTC.debug.xcconfig */,
+				F36EF6DC84C986C17DDB04FB /* Pods-AgoraVRTC.release.xcconfig */,
+				65DB1CA539605CC32E18E460 /* Pods-AgoraVRTCDemo.debug.xcconfig */,
+				CC2D88702C3A45AD793D4B9E /* Pods-AgoraVRTCDemo.release.xcconfig */,
+				5CEC9B98B4B77AC4924EDFBD /* Pods-auth.debug.xcconfig */,
+				3F2F3EDD38EAF559C9131C1F /* Pods-auth.release.xcconfig */,
+				2C05614031FD9F25B0EE33B6 /* Pods-demo.debug.xcconfig */,
+				7809EF0660C69DA7E2C75DA2 /* Pods-demo.release.xcconfig */,
+				22A2C26FE45198735689D118 /* Pods-KMCAgoraVRTCDemo.debug.xcconfig */,
+				569B2B5FD7FB088D5323C758 /* Pods-KMCAgoraVRTCDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		95C902211F0CCA0500AC1FAA = {
+			isa = PBXGroup;
+			children = (
+				9540A4351F136C27005882DA /* KMCAgoraVRTC.framework */,
+				95C902FB1F0CD48D00AC1FAA /* Shared */,
+				95C902761F0CCADE00AC1FAA /* AgoraVRTCDemo */,
+				95C9022B1F0CCA0500AC1FAA /* Products */,
+				2DC2157DC4A16BC8C73E7386 /* Pods */,
+				0BF331484BE4569406E340A0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		95C9022B1F0CCA0500AC1FAA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95C902751F0CCADE00AC1FAA /* KMCAgoraVRTCDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95C902761F0CCADE00AC1FAA /* AgoraVRTCDemo */ = {
+			isa = PBXGroup;
+			children = (
+				95C902BD1F0CD1C400AC1FAA /* KSYUIUtils */,
+				95C902C81F0CD1C400AC1FAA /* KSYDemoUI */,
+				95C9027A1F0CCADE00AC1FAA /* AppDelegate.h */,
+				95C9027B1F0CCADE00AC1FAA /* AppDelegate.m */,
+				95C9027D1F0CCADE00AC1FAA /* ViewController.h */,
+				95C9027E1F0CCADE00AC1FAA /* ViewController.m */,
+				95C902801F0CCADE00AC1FAA /* Main.storyboard */,
+				95C902831F0CCADE00AC1FAA /* Assets.xcassets */,
+				95C903851F0E15A800AC1FAA /* mask.png */,
+				95C902851F0CCADE00AC1FAA /* LaunchScreen.storyboard */,
+				95C902881F0CCADE00AC1FAA /* Info.plist */,
+				95C902771F0CCADE00AC1FAA /* Supporting Files */,
+			);
+			path = AgoraVRTCDemo;
+			sourceTree = "<group>";
+		};
+		95C902771F0CCADE00AC1FAA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				95C902781F0CCADE00AC1FAA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		95C902BD1F0CD1C400AC1FAA /* KSYUIUtils */ = {
+			isa = PBXGroup;
+			children = (
+				95C902BE1F0CD1C400AC1FAA /* KSYFileSelector.h */,
+				95C902BF1F0CD1C400AC1FAA /* KSYFileSelector.m */,
+				95C902C01F0CD1C400AC1FAA /* KSYNameSlider.h */,
+				95C902C11F0CD1C400AC1FAA /* KSYNameSlider.m */,
+				95C902C41F0CD1C400AC1FAA /* KSYUIVC.h */,
+				95C902C51F0CD1C400AC1FAA /* KSYUIVC.m */,
+				95C902C61F0CD1C400AC1FAA /* KSYUIView.h */,
+				95C902C71F0CD1C400AC1FAA /* KSYUIView.m */,
+			);
+			path = KSYUIUtils;
+			sourceTree = "<group>";
+		};
+		95C902C81F0CD1C400AC1FAA /* KSYDemoUI */ = {
+			isa = PBXGroup;
+			children = (
+				95C902C91F0CD1C400AC1FAA /* KSYCtrlView.h */,
+				95C902CA1F0CD1C400AC1FAA /* KSYCtrlView.m */,
+				95C902CB1F0CD1C400AC1FAA /* KSYFilterView.h */,
+				95C902CC1F0CD1C400AC1FAA /* KSYFilterView.m */,
+				95C902CF1F0CD1C400AC1FAA /* KSYMenuView.h */,
+				95C902D01F0CD1C400AC1FAA /* KSYMenuView.m */,
+				95C902D11F0CD1C400AC1FAA /* KSYPresetCfgVC.h */,
+				95C902D21F0CD1C400AC1FAA /* KSYPresetCfgVC.m */,
+				95C902D31F0CD1C400AC1FAA /* KSYPresetCfgView.h */,
+				95C902D41F0CD1C400AC1FAA /* KSYPresetCfgView.m */,
+				95C902D51F0CD1C400AC1FAA /* KSYRTCAgoraVC.h */,
+				95C902D61F0CD1C400AC1FAA /* KSYRTCAgoraVC.m */,
+				95C902D71F0CD1C400AC1FAA /* KSYRtcView.h */,
+				95C902D81F0CD1C400AC1FAA /* KSYRtcView.m */,
+				95C902D91F0CD1C400AC1FAA /* KSYStateLableView.h */,
+				95C902DA1F0CD1C400AC1FAA /* KSYStateLableView.m */,
+				95C902DB1F0CD1C400AC1FAA /* KSYStreamerVC.h */,
+				95C902DC1F0CD1C400AC1FAA /* KSYStreamerVC.m */,
+			);
+			path = KSYDemoUI;
+			sourceTree = "<group>";
+		};
+		95C902FB1F0CD48D00AC1FAA /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				95C903291F0CDE9D00AC1FAA /* libyuv */,
+				95C902FC1F0CD48D00AC1FAA /* KMCDefines.h */,
+				95C902B71F0CD1A300AC1FAA /* KSYAgoraStreamerKit.h */,
+				95C902B81F0CD1A300AC1FAA /* KSYAgoraStreamerKit.m */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		95C903291F0CDE9D00AC1FAA /* libyuv */ = {
+			isa = PBXGroup;
+			children = (
+				95C9032A1F0CDE9D00AC1FAA /* basic_types.h */,
+				95C9032B1F0CDE9D00AC1FAA /* compare.h */,
+				95C9032C1F0CDE9D00AC1FAA /* compare_row.h */,
+				95C9032D1F0CDE9D00AC1FAA /* convert.h */,
+				95C9032E1F0CDE9D00AC1FAA /* convert_argb.h */,
+				95C9032F1F0CDE9D00AC1FAA /* convert_from.h */,
+				95C903301F0CDE9D00AC1FAA /* convert_from_argb.h */,
+				95C903311F0CDE9D00AC1FAA /* cpu_id.h */,
+				95C903321F0CDE9D00AC1FAA /* libyuv.h */,
+				95C903331F0CDE9D00AC1FAA /* mjpeg_decoder.h */,
+				95C903341F0CDE9D00AC1FAA /* planar_functions.h */,
+				95C903351F0CDE9D00AC1FAA /* rotate.h */,
+				95C903361F0CDE9D00AC1FAA /* rotate_argb.h */,
+				95C903371F0CDE9D00AC1FAA /* rotate_row.h */,
+				95C903381F0CDE9D00AC1FAA /* row.h */,
+				95C903391F0CDE9D00AC1FAA /* scale.h */,
+				95C9033A1F0CDE9D00AC1FAA /* scale_argb.h */,
+				95C9033B1F0CDE9D00AC1FAA /* scale_row.h */,
+				95C9033C1F0CDE9D00AC1FAA /* version.h */,
+				95C9033D1F0CDE9D00AC1FAA /* video_common.h */,
+			);
+			path = libyuv;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		95C902741F0CCADE00AC1FAA /* KMCAgoraVRTCDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95C902891F0CCADE00AC1FAA /* Build configuration list for PBXNativeTarget "KMCAgoraVRTCDemo" */;
+			buildPhases = (
+				AFD0749274489B6E8433586B /* [CP] Check Pods Manifest.lock */,
+				95C902711F0CCADE00AC1FAA /* Sources */,
+				95C902721F0CCADE00AC1FAA /* Frameworks */,
+				95C902731F0CCADE00AC1FAA /* Resources */,
+				7E649C6FF453BA3469B760C0 /* [CP] Embed Pods Frameworks */,
+				0143EB8986A8113C91D10A54 /* [CP] Copy Pods Resources */,
+				95C903711F0E0EAD00AC1FAA /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KMCAgoraVRTCDemo;
+			productName = AgoraVRTCDemo;
+			productReference = 95C902751F0CCADE00AC1FAA /* KMCAgoraVRTCDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		95C902221F0CCA0500AC1FAA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = ksyun;
+				TargetAttributes = {
+					95C902741F0CCADE00AC1FAA = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = ZGJ54Q7R45;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 95C902251F0CCA0500AC1FAA /* Build configuration list for PBXProject "KMCAgoraVRTCDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 95C902211F0CCA0500AC1FAA;
+			productRefGroup = 95C9022B1F0CCA0500AC1FAA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				95C902741F0CCADE00AC1FAA /* KMCAgoraVRTCDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		95C902731F0CCADE00AC1FAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95C902871F0CCADE00AC1FAA /* LaunchScreen.storyboard in Resources */,
+				95C902841F0CCADE00AC1FAA /* Assets.xcassets in Resources */,
+				95C902821F0CCADE00AC1FAA /* Main.storyboard in Resources */,
+				95C903861F0E15A800AC1FAA /* mask.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0143EB8986A8113C91D10A54 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-KMCAgoraVRTCDemo/Pods-KMCAgoraVRTCDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E649C6FF453BA3469B760C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-KMCAgoraVRTCDemo/Pods-KMCAgoraVRTCDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFD0749274489B6E8433586B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		95C902711F0CCADE00AC1FAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95C903471F0DDC3F00AC1FAA /* KSYAgoraStreamerKit.m in Sources */,
+				95C902DD1F0CD1C400AC1FAA /* KSYFileSelector.m in Sources */,
+				95C902E81F0CD1C400AC1FAA /* KSYRTCAgoraVC.m in Sources */,
+				95C902E91F0CD1C400AC1FAA /* KSYRtcView.m in Sources */,
+				95C902E71F0CD1C400AC1FAA /* KSYPresetCfgView.m in Sources */,
+				95C902E61F0CD1C400AC1FAA /* KSYPresetCfgVC.m in Sources */,
+				95C902DE1F0CD1C400AC1FAA /* KSYNameSlider.m in Sources */,
+				95C9027F1F0CCADE00AC1FAA /* ViewController.m in Sources */,
+				95C9027C1F0CCADE00AC1FAA /* AppDelegate.m in Sources */,
+				95C902EA1F0CD1C400AC1FAA /* KSYStateLableView.m in Sources */,
+				95C902E31F0CD1C400AC1FAA /* KSYFilterView.m in Sources */,
+				95C902E21F0CD1C400AC1FAA /* KSYCtrlView.m in Sources */,
+				95C902E01F0CD1C400AC1FAA /* KSYUIVC.m in Sources */,
+				95C902E11F0CD1C400AC1FAA /* KSYUIView.m in Sources */,
+				95C902EB1F0CD1C400AC1FAA /* KSYStreamerVC.m in Sources */,
+				95C902791F0CCADE00AC1FAA /* main.m in Sources */,
+				95C902E51F0CD1C400AC1FAA /* KSYMenuView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		95C902801F0CCADE00AC1FAA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95C902811F0CCADE00AC1FAA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		95C902851F0CCADE00AC1FAA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95C902861F0CCADE00AC1FAA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		95C9023F1F0CCA0500AC1FAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		95C902401F0CCA0500AC1FAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		95C9028A1F0CCADE00AC1FAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22A2C26FE45198735689D118 /* Pods-KMCAgoraVRTCDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				DEVELOPMENT_TEAM = ZGJ54Q7R45;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = AgoraVRTCDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ksyun.mc.AgoraVRTCDemo2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		95C9028B1F0CCADE00AC1FAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 569B2B5FD7FB088D5323C758 /* Pods-KMCAgoraVRTCDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				DEVELOPMENT_TEAM = ZGJ54Q7R45;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = AgoraVRTCDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ksyun.mc.AgoraVRTCDemo2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		95C902251F0CCA0500AC1FAA /* Build configuration list for PBXProject "KMCAgoraVRTCDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95C9023F1F0CCA0500AC1FAA /* Debug */,
+				95C902401F0CCA0500AC1FAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95C902891F0CCADE00AC1FAA /* Build configuration list for PBXNativeTarget "KMCAgoraVRTCDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95C9028A1F0CCADE00AC1FAA /* Debug */,
+				95C9028B1F0CCADE00AC1FAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 95C902221F0CCA0500AC1FAA /* Project object */;
+}

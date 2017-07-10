@@ -1,0 +1,6 @@
+framework module KMCAgoraVRTC {
+  umbrella header "KMCAgoraVRTC.h"
+
+  export *
+  module * { export * }
+}
