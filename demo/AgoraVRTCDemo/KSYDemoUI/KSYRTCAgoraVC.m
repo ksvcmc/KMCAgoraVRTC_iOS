@@ -106,6 +106,12 @@
 
 - (void) onCameraToggle{
     [_kit switchCamera];
+    if (_kit && [_kit isTorchSupported]) {
+        [self.ctrlView.btnFlash setEnabled:YES];
+    }
+    else{
+        [self.ctrlView.btnFlash setEnabled:NO];
+    }
     [super onCameraToggle];
 }
 
