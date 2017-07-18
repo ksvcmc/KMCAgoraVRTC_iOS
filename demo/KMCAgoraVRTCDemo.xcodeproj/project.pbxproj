@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		016F2CF4F83B51389E77F067 /* libPods-AgoraVRTCDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F48460C3454871138355D4D8 /* libPods-AgoraVRTCDemo.a */; };
 		8EC4B4AE363BF0CE37B2FA31 /* libPods-KMCAgoraVRTCDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6F185B71E47BF491D28422 /* libPods-KMCAgoraVRTCDemo.a */; };
 		9540A4361F136C27005882DA /* KMCAgoraVRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9540A4351F136C27005882DA /* KMCAgoraVRTC.framework */; };
 		9540A4381F136C82005882DA /* KMCAgoraVRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9540A4351F136C27005882DA /* KMCAgoraVRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -149,7 +148,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9540A4361F136C27005882DA /* KMCAgoraVRTC.framework in Frameworks */,
-				016F2CF4F83B51389E77F067 /* libPods-AgoraVRTCDemo.a in Frameworks */,
 				8EC4B4AE363BF0CE37B2FA31 /* libPods-KMCAgoraVRTCDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
