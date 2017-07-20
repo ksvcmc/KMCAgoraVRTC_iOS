@@ -56,7 +56,7 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
     __weak typeof(self) weakSelf = self;
 
     
-    _agoraKit = [[KMCAgoraVRTC alloc] initWithToken:@"302c01a1de22e28746b247ec85c31990" delegate:delegate];
+    _agoraKit = [[KMCAgoraVRTC alloc] initWithToken:@"7920903db27923b537ce1beedb976cd1" delegate:delegate];
     _beautyOutput = nil;
     _callstarted = NO;
     _maskPicture = nil;
