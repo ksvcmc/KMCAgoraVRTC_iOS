@@ -361,7 +361,7 @@
     //
 }
 
-- (void)authSuccess
+- (void)authSuccess:(id)sender
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         [MBProgressHUD hideHUDForView:self.view animated:(BOOL)YES];

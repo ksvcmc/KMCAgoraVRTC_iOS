@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8EC4B4AE363BF0CE37B2FA31 /* libPods-KMCAgoraVRTCDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6F185B71E47BF491D28422 /* libPods-KMCAgoraVRTCDemo.a */; };
-		9540A4361F136C27005882DA /* KMCAgoraVRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9540A4351F136C27005882DA /* KMCAgoraVRTC.framework */; };
-		9540A4381F136C82005882DA /* KMCAgoraVRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9540A4351F136C27005882DA /* KMCAgoraVRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		951EA14D1F29F0EA00151A76 /* KMCAgoraVRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FA012D1F29E8DD00B63B82 /* KMCAgoraVRTC.framework */; };
+		951EA14E1F29F0EA00151A76 /* KMCAgoraVRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95FA012D1F29E8DD00B63B82 /* KMCAgoraVRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95C902791F0CCADE00AC1FAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C902781F0CCADE00AC1FAA /* main.m */; };
 		95C9027C1F0CCADE00AC1FAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C9027B1F0CCADE00AC1FAA /* AppDelegate.m */; };
 		95C9027F1F0CCADE00AC1FAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C9027E1F0CCADE00AC1FAA /* ViewController.m */; };
@@ -40,7 +40,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9540A4381F136C82005882DA /* KMCAgoraVRTC.framework in Embed Frameworks */,
+				951EA14E1F29F0EA00151A76 /* KMCAgoraVRTC.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,19 +48,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		22A2C26FE45198735689D118 /* Pods-KMCAgoraVRTCDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMCAgoraVRTCDemo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-KMCAgoraVRTCDemo/Pods-KMCAgoraVRTCDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		2C05614031FD9F25B0EE33B6 /* Pods-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-demo/Pods-demo.debug.xcconfig"; sourceTree = "<group>"; };
-		3CF1609DE91E94161AC742D0 /* libPods-demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F2F3EDD38EAF559C9131C1F /* Pods-auth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-auth.release.xcconfig"; path = "../Pods/Target Support Files/Pods-auth/Pods-auth.release.xcconfig"; sourceTree = "<group>"; };
-		4F59B4F483CE42F6F81BF3B7 /* libPods-auth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-auth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		569B2B5FD7FB088D5323C758 /* Pods-KMCAgoraVRTCDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMCAgoraVRTCDemo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-KMCAgoraVRTCDemo/Pods-KMCAgoraVRTCDemo.release.xcconfig"; sourceTree = "<group>"; };
-		5CEC9B98B4B77AC4924EDFBD /* Pods-auth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-auth.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-auth/Pods-auth.debug.xcconfig"; sourceTree = "<group>"; };
-		65DB1CA539605CC32E18E460 /* Pods-AgoraVRTCDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgoraVRTCDemo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-AgoraVRTCDemo/Pods-AgoraVRTCDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		6BA8B95474B93EBEC5276508 /* libPods-KMCAgoraVRTC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KMCAgoraVRTC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7809EF0660C69DA7E2C75DA2 /* Pods-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-demo/Pods-demo.release.xcconfig"; sourceTree = "<group>"; };
-		8B2BB8AEF05E6FB5DEE09DEF /* libPods-Auth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Auth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		94E233FB85E25E9553291B43 /* Pods-AgoraVRTC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgoraVRTC.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-AgoraVRTC/Pods-AgoraVRTC.debug.xcconfig"; sourceTree = "<group>"; };
-		9540A4351F136C27005882DA /* KMCAgoraVRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KMCAgoraVRTC.framework; sourceTree = "<group>"; };
+		1B30A315330BA70ECA97C18B /* Pods-KMCAgoraVRTCDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMCAgoraVRTCDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-KMCAgoraVRTCDemo/Pods-KMCAgoraVRTCDemo.release.xcconfig"; sourceTree = "<group>"; };
+		217715553FFEF21D76413F80 /* Pods-KMCAgoraVRTCDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMCAgoraVRTCDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KMCAgoraVRTCDemo/Pods-KMCAgoraVRTCDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		95C902751F0CCADE00AC1FAA /* KMCAgoraVRTCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KMCAgoraVRTCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C902781F0CCADE00AC1FAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		95C9027A1F0CCADE00AC1FAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -99,7 +88,6 @@
 		95C902DA1F0CD1C400AC1FAA /* KSYStateLableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYStateLableView.m; sourceTree = "<group>"; };
 		95C902DB1F0CD1C400AC1FAA /* KSYStreamerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYStreamerVC.h; sourceTree = "<group>"; };
 		95C902DC1F0CD1C400AC1FAA /* KSYStreamerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYStreamerVC.m; sourceTree = "<group>"; };
-		95C902FC1F0CD48D00AC1FAA /* KMCDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMCDefines.h; sourceTree = "<group>"; };
 		95C9032A1F0CDE9D00AC1FAA /* basic_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = basic_types.h; sourceTree = "<group>"; };
 		95C9032B1F0CDE9D00AC1FAA /* compare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = compare.h; sourceTree = "<group>"; };
 		95C9032C1F0CDE9D00AC1FAA /* compare_row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = compare_row.h; sourceTree = "<group>"; };
@@ -134,11 +122,7 @@
 		95C903681F0E086E00AC1FAA /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		95C9036A1F0E089B00AC1FAA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		95C903851F0E15A800AC1FAA /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
-		ACCF27B0874F3EA3F385092D /* libPods-AgoraVRTC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AgoraVRTC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC2D88702C3A45AD793D4B9E /* Pods-AgoraVRTCDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgoraVRTCDemo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-AgoraVRTCDemo/Pods-AgoraVRTCDemo.release.xcconfig"; sourceTree = "<group>"; };
-		DD0294B36BEDC4E6B230563C /* libPods-KMCAuth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KMCAuth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F36EF6DC84C986C17DDB04FB /* Pods-AgoraVRTC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgoraVRTC.release.xcconfig"; path = "../Pods/Target Support Files/Pods-AgoraVRTC/Pods-AgoraVRTC.release.xcconfig"; sourceTree = "<group>"; };
-		F48460C3454871138355D4D8 /* libPods-AgoraVRTCDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AgoraVRTCDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		95FA012D1F29E8DD00B63B82 /* KMCAgoraVRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KMCAgoraVRTC.framework; path = ../framework/KMCAgoraVRTC.framework; sourceTree = "<group>"; };
 		FB6F185B71E47BF491D28422 /* libPods-KMCAgoraVRTCDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KMCAgoraVRTCDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -147,7 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9540A4361F136C27005882DA /* KMCAgoraVRTC.framework in Frameworks */,
+				951EA14D1F29F0EA00151A76 /* KMCAgoraVRTC.framework in Frameworks */,
 				8EC4B4AE363BF0CE37B2FA31 /* libPods-KMCAgoraVRTCDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,13 +155,6 @@
 				95C903561F0E062D00AC1FAA /* CoreVideo.framework */,
 				95C903541F0E05BC00AC1FAA /* VideoToolbox.framework */,
 				95C903421F0CFE2A00AC1FAA /* libstdc++.tbd */,
-				ACCF27B0874F3EA3F385092D /* libPods-AgoraVRTC.a */,
-				F48460C3454871138355D4D8 /* libPods-AgoraVRTCDemo.a */,
-				4F59B4F483CE42F6F81BF3B7 /* libPods-auth.a */,
-				3CF1609DE91E94161AC742D0 /* libPods-demo.a */,
-				8B2BB8AEF05E6FB5DEE09DEF /* libPods-Auth.a */,
-				6BA8B95474B93EBEC5276508 /* libPods-KMCAgoraVRTC.a */,
-				DD0294B36BEDC4E6B230563C /* libPods-KMCAuth.a */,
 				FB6F185B71E47BF491D28422 /* libPods-KMCAgoraVRTCDemo.a */,
 			);
 			name = Frameworks;
@@ -186,16 +163,8 @@
 		2DC2157DC4A16BC8C73E7386 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				94E233FB85E25E9553291B43 /* Pods-AgoraVRTC.debug.xcconfig */,
-				F36EF6DC84C986C17DDB04FB /* Pods-AgoraVRTC.release.xcconfig */,
-				65DB1CA539605CC32E18E460 /* Pods-AgoraVRTCDemo.debug.xcconfig */,
-				CC2D88702C3A45AD793D4B9E /* Pods-AgoraVRTCDemo.release.xcconfig */,
-				5CEC9B98B4B77AC4924EDFBD /* Pods-auth.debug.xcconfig */,
-				3F2F3EDD38EAF559C9131C1F /* Pods-auth.release.xcconfig */,
-				2C05614031FD9F25B0EE33B6 /* Pods-demo.debug.xcconfig */,
-				7809EF0660C69DA7E2C75DA2 /* Pods-demo.release.xcconfig */,
-				22A2C26FE45198735689D118 /* Pods-KMCAgoraVRTCDemo.debug.xcconfig */,
-				569B2B5FD7FB088D5323C758 /* Pods-KMCAgoraVRTCDemo.release.xcconfig */,
+				217715553FFEF21D76413F80 /* Pods-KMCAgoraVRTCDemo.debug.xcconfig */,
+				1B30A315330BA70ECA97C18B /* Pods-KMCAgoraVRTCDemo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -203,7 +172,7 @@
 		95C902211F0CCA0500AC1FAA = {
 			isa = PBXGroup;
 			children = (
-				9540A4351F136C27005882DA /* KMCAgoraVRTC.framework */,
+				95FA012D1F29E8DD00B63B82 /* KMCAgoraVRTC.framework */,
 				95C902FB1F0CD48D00AC1FAA /* Shared */,
 				95C902761F0CCADE00AC1FAA /* AgoraVRTCDemo */,
 				95C9022B1F0CCA0500AC1FAA /* Products */,
@@ -291,7 +260,6 @@
 			isa = PBXGroup;
 			children = (
 				95C903291F0CDE9D00AC1FAA /* libyuv */,
-				95C902FC1F0CD48D00AC1FAA /* KMCDefines.h */,
 				95C902B71F0CD1A300AC1FAA /* KSYAgoraStreamerKit.h */,
 				95C902B81F0CD1A300AC1FAA /* KSYAgoraStreamerKit.m */,
 			);
@@ -332,7 +300,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95C902891F0CCADE00AC1FAA /* Build configuration list for PBXNativeTarget "KMCAgoraVRTCDemo" */;
 			buildPhases = (
-				AFD0749274489B6E8433586B /* [CP] Check Pods Manifest.lock */,
+				B2F49C53D264508F7E5BE7D2 /* [CP] Check Pods Manifest.lock */,
 				95C902711F0CCADE00AC1FAA /* Sources */,
 				95C902721F0CCADE00AC1FAA /* Frameworks */,
 				95C902731F0CCADE00AC1FAA /* Resources */,
@@ -415,7 +383,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-KMCAgoraVRTCDemo/Pods-KMCAgoraVRTCDemo-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KMCAgoraVRTCDemo/Pods-KMCAgoraVRTCDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7E649C6FF453BA3469B760C0 /* [CP] Embed Pods Frameworks */ = {
@@ -430,10 +398,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-KMCAgoraVRTCDemo/Pods-KMCAgoraVRTCDemo-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KMCAgoraVRTCDemo/Pods-KMCAgoraVRTCDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AFD0749274489B6E8433586B /* [CP] Check Pods Manifest.lock */ = {
+		B2F49C53D264508F7E5BE7D2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -591,7 +559,7 @@
 		};
 		95C9028A1F0CCADE00AC1FAA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22A2C26FE45198735689D118 /* Pods-KMCAgoraVRTCDemo.debug.xcconfig */;
+			baseConfigurationReference = 217715553FFEF21D76413F80 /* Pods-KMCAgoraVRTCDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
@@ -600,7 +568,7 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/../framework",
 				);
 				INFOPLIST_FILE = AgoraVRTCDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -612,7 +580,7 @@
 		};
 		95C9028B1F0CCADE00AC1FAA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 569B2B5FD7FB088D5323C758 /* Pods-KMCAgoraVRTCDemo.release.xcconfig */;
+			baseConfigurationReference = 1B30A315330BA70ECA97C18B /* Pods-KMCAgoraVRTCDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
@@ -620,7 +588,7 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/../framework",
 				);
 				INFOPLIST_FILE = AgoraVRTCDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AgoraVRTCDemo/KSYDemoUI/KSYRTCAgoraVC.m"
+            timestampString = "522842560.916799"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "366"
+            endingLineNumber = "366"
+            landmarkName = "-authSuccess"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[KSYRTCAgoraVC authSuccess:]"
+                  moduleName = "KMCAgoraVRTCDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anna/work/kingsoft/pass/2017/mc/release/KMCAgoraVRTCDemo/demo/AgoraVRTCDemo/KSYDemoUI/KSYRTCAgoraVC.m"
+                  timestampString = "522842631.0571"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "366"
+                  endingLineNumber = "366"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__29-[KSYRTCAgoraVC authSuccess:]_block_invoke"
+                  moduleName = "KMCAgoraVRTCDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anna/work/kingsoft/pass/2017/mc/release/KMCAgoraVRTCDemo/demo/AgoraVRTCDemo/KSYDemoUI/KSYRTCAgoraVC.m"
+                  timestampString = "522842631.059762"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "366"
+                  endingLineNumber = "366"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

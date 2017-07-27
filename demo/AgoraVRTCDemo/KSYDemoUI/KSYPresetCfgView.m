@@ -116,6 +116,11 @@
     return [self resolution: _streamResoUI.selectedSegmentIndex];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self endEditing:YES];
+}
+
+
 
 @synthesize capResolutionSize =  _capResolutionSize;
 - (CGSize) capResolutionSize {
