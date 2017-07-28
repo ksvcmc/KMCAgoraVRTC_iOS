@@ -3,14 +3,20 @@
 金山魔方是一个多媒体能力提供平台，通过统一接入API、统一鉴权、统一计费等多种手段，降低客户接入多媒体处理能力的代价，提供多媒体能力供应商的效率。 本文档主要针对视频连麦功能而说明。
 
 ## 集成
-下载demo, 执行
+
+客户可以先行下载demo, 执行
 ```
 pod install
 ```
 打开KMCAgoraVRTCDemo.xcworkspace演示demo查看效果
 
-将KMCAgoraVRTC.framework添加进自己的工程用于集成
+- 手动集成
+将KMCAgoraVRTC.framework拖进工程，切换到xcode的**General**->**Embedded Binaries**位置，添加KMCAgoraVRTC.framework即可
 
+- Cocoapod集成
+```
+pod 'KMCAgoraVRTC'
+```
 
 ## SDK使用指南  
 
