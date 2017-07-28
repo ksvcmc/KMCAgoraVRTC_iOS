@@ -47,6 +47,7 @@
         return;
     }
     _preStatue = currentStatus;
+    NSLog(@"@@@@@@@@:%@", @(currentStatus));
     switch (currentStatus) {
         case KSYNotReachable:
             _networkStatus = @"无网络";
