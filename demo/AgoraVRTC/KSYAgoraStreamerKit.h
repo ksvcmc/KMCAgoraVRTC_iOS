@@ -1,9 +1,11 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
+#import <libksygpulive/KSYGPUStreamerKit.h>
 
-@class KSYGPUStreamerKit;
+
 @class KMCAgoraVRTC;
 @protocol KMCRtcDelegate;
+
 @interface KSYAgoraStreamerKit: KSYGPUStreamerKit
 /**
  @abstract 初始化方法

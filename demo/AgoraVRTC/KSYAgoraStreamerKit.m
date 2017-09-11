@@ -1,12 +1,11 @@
 
 #import <libksygpulive/KSYGPUPicOutput.h>
 #import <libksygpulive/libksystreamerengine.h>
-#import <libksygpulive/KSYGPUStreamerKit.h>
+
 #import <KMCAgoraVRTC/KMCAgoraVRTC.h>
 #import <GPUImage/GPUImage.h>
 #import "KSYAgoraStreamerKit.h"
 #import <mach/mach_time.h>
-
 
 static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32 size) {
     bzero(asbd, sizeof(AudioStreamBasicDescription));
@@ -53,9 +52,9 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
 - (instancetype) initWithDefaultCfg:(id<KMCRtcDelegate>)delegate
 {
     self = [super initWithDefaultCfg];
+    
     __weak typeof(self) weakSelf = self;
 
-    
     _agoraKit = [[KMCAgoraVRTC alloc] initWithToken:@"7920903db27923b537ce1beedb976cd1" delegate:delegate];
     _beautyOutput = nil;
     _callstarted = NO;
@@ -82,6 +81,13 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
                 [weak_kit setupBeautyOutput];
                 [weak_kit setupRtcFilter:weak_kit.curfilter];
             }
+            
+            //切换到声网音频采集
+            [weak_kit.aCapDev stopCapture];
+            [weak_kit.aMixer processAudioData:NULL nbSample:0 withFormat:NULL timeinfo:(CMTimeMake(0, 0)) of:0];
+            [weak_kit.aMixer setTrack:1 enable:YES];
+            [weak_kit.aMixer setMixVolume:1 of:1];
+            _localAudioPts = kCMTimeInvalid;
             
             if(weak_kit.onChannelJoin)
                 weak_kit.onChannelJoin(200);
@@ -398,6 +404,7 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
 }
 -(void)leaveChannel
 {
+    [self.aCapDev stopCapture];
     [_agoraKit leaveChannel];
 }
 
@@ -427,13 +434,6 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
 -(void)startRtcView
 {
     [self startRtcVideoView];
-    //音频混音
-    [self.aCapDev stopCapture];
-    [self.aMixer processAudioData:NULL nbSample:0 withFormat:&(_asbd) timeinfo:(CMTimeMake(0, 0)) of:0];
-    
-    [self.aMixer setTrack:1 enable:YES];
-    [self.aMixer setMixVolume:1 of:1];
-    _localAudioPts = kCMTimeInvalid;
 }
 
 -(void)stopRTCVideoView{
@@ -448,7 +448,6 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
 {
     [self stopRTCVideoView];
     
-    
     [self.aCapDev startCapture];
     [self.aMixer setTrack:1 enable:NO];
 }
@@ -458,6 +457,7 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
     //NSLog(@"width:%zu,height:%zu",CVPixelBufferGetWidth(buf),CVPixelBufferGetHeight(buf));
     [self.rtcYuvInput processPixelBuffer:buf time:CMTimeMake(2, 10)];
 }
+
 -(void) defaultRtcVoiceCallback:(uint8_t*)buf
                             len:(int)len
                             pts:(CMTime)pts
