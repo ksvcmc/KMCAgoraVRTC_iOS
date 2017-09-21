@@ -87,7 +87,7 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
             [weak_kit.aMixer processAudioData:NULL nbSample:0 withFormat:NULL timeinfo:(CMTimeMake(0, 0)) of:0];
             [weak_kit.aMixer setTrack:1 enable:YES];
             [weak_kit.aMixer setMixVolume:1 of:1];
-            _localAudioPts = kCMTimeInvalid;
+            weak_kit.localAudioPts = kCMTimeInvalid;
             
             if(weak_kit.onChannelJoin)
                 weak_kit.onChannelJoin(200);
@@ -123,12 +123,13 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
     _agoraKit.localAudioDataCallback=^(void* buffer,int sampleRate,int len,int bytesPerSample,int channels,int64_t pts)
     {
         if(CMTIME_IS_INVALID(weak_kit.localAudioPts)){
-            _localAudioPts = _videoPts;
+            weak_kit.localAudioPts = weak_kit.videoPts;
         }else{
             int nb_sample = len/bytesPerSample;
             int64_t timescale = weak_kit.localAudioPts.timescale;
             int64_t dur =(nb_sample*timescale)/sampleRate;
-            _localAudioPts.value +=dur;
+            int64_t newValue =weak_kit.localAudioPts.value + dur;
+            weak_kit.localAudioPts = CMTimeMake(newValue, weak_kit.localAudioPts.timescale) ;
         }
         
         [weak_kit defaultRtcVoiceCallback:buffer len:len pts:weak_kit.localAudioPts channel:channels sampleRate:sampleRate sampleBytes:bytesPerSample trackId:0];
@@ -154,7 +155,6 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
 //               name:AVAudioSessionInterruptionNotification
 //             object:nil];
 
-    
     return self;
 }
 

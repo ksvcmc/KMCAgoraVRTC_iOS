@@ -383,4 +383,10 @@
 }
 
 
+-(void)dealloc
+{
+    NSLog(@"KSYRTCAgoraVC dealloc");
+}
+
+
 @end
