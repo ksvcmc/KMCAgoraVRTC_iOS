@@ -39,7 +39,7 @@ pod 'KMCAgoraVRTC'
 -(void)joinChannel:(NSString *)channelName uid:(NSUInteger)uid;
 ```
 
-离开一个Channel
+离开一个Channel, T人可调用该API，
 
 ``` objective-c
 -(void)leaveChannel;
