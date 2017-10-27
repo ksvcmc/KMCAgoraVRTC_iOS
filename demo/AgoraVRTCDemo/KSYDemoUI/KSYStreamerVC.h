@@ -15,6 +15,7 @@
 #import "KSYMenuView.h"
 #import "KSYFilterView.h"
 #import "KSYRtcView.h"
+#import "KSYPlayView.h"
 #import "KSYStateLableView.h"
 
 #import <libksygpulive/libksystreamerengine.h>
@@ -34,6 +35,8 @@
 @property (nonatomic, readonly) KSYMenuView   * ksyMenuView;
 @property (nonatomic, readonly) KSYFilterView * ksyFilterView;
 @property (nonatomic, readonly) KSYRtcView    *rtcView;
+@property (nonatomic, readonly) KSYPlayView   *playerView;
+
 // submodules
 @property (nonatomic, retain) KSYStreamerBase*   streamerBase;
 @property (nonatomic, retain) KSYGPUCamera*      capDev;

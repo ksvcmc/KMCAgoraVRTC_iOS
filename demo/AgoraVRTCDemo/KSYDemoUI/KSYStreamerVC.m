@@ -67,6 +67,7 @@
     _ksyMenuView.hidden = NO; // menu
     _ksyFilterView  = [[KSYFilterView alloc]initWithParent:_ksyMenuView];
     _rtcView        = [[KSYRtcView alloc]initWithParent:_ksyMenuView];
+    _playerView       = [[KSYPlayView alloc]initWithParent:_ksyMenuView];
 
     __weak KSYStreamerVC *weakself = self;
     _ksyMenuView.onBtnBlock=^(id sender){
@@ -79,6 +80,10 @@
 
     _rtcView.onBtnBlock= ^(id sender){
         [weakself onRtcBtnPress:sender];
+    };
+    
+    _playerView.onBtnBlock= ^(id sender){
+        [weakself onPlayerBtnPress:sender];
     };
 }
 
@@ -275,7 +280,9 @@
     else if (btn == _ksyMenuView.rtcBtn){
         view = _rtcView;
     }
-    
+    else if (btn == _ksyMenuView.playBtn){
+        view = _playerView;
+    }
     // 将菜单的按钮隐藏, 将触发二级菜单的view显示
     if (view){
         [_ksyMenuView hideAllBtn:YES];
@@ -284,7 +291,6 @@
         [view     layoutUI];
     }
 }
-
 
 - (void)swipeController:(UISwipeGestureRecognizer *)swipGestRec{
     if (swipGestRec == _swipeGest){
@@ -315,6 +321,27 @@
     }
 }
 
+- (void)onPlayerBtnPress:(UIButton *)btn{
+    KSYUIView * view = nil;
+    
+    if (btn == _playerView.playBtn){
+        [self onPlayBtn];
+    }
+    else if (btn == _playerView.pauseBtn){
+        [self onPauseBtn];
+    }
+    else if (btn == _playerView.stopBtn){
+        [self onStopBtn];
+    }
+    
+    if (view){
+        [_ksyMenuView hideAllBtn:YES];
+        view.hidden = NO;
+        view.frame = _ksyMenuView.frame;
+        [view     layoutUI];
+    }
+}
+
 -(void)onJoinChannelBtn
 {
     
@@ -325,6 +352,18 @@
     
 }
 
+-(void)onPlayBtn
+{
+    
+}
+-(void)onPauseBtn
+{
+    
+}
+-(void)onStopBtn
+{
+    
+}
 #pragma mark - subviews: basic ctrl
 - (void) onFlash { //  see kit or block
 }

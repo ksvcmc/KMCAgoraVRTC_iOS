@@ -15,6 +15,8 @@
 @property UIButton *backBtn;
 //连麦
 @property UIButton *rtcBtn;
+//播放
+@property UIButton *playBtn;
 
 - (void)hideAllBtn: (BOOL) bHide;
 

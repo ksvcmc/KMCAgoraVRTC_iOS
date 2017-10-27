@@ -25,6 +25,7 @@
     
     UIPanGestureRecognizer *panGestureRecognizer;
     UIView* _winRtcView;
+    BOOL bRtc;//播放和连麦不能同时用
 }
 @property bool beQuit;
 
@@ -51,8 +52,8 @@
     [self setStreamerCfg];
     //设置rtc参数
     [self setAgoraStreamerKitCfg];
-    
-
+    //设置播放参数
+    [self setPlayercfg];
     _ismaster = NO;
     _beQuit = NO;
     //设置拖拽手势
@@ -143,6 +144,36 @@
     }
 }
 
+#pragma mark - 播放
+- (void)setPlayercfg
+{
+    //设置小窗口属性
+    _kit.playerLayer = 6;//设置小窗口图层，因为主版本占用了1~3，建议设置为4
+    _kit.playerRect = CGRectMake(0.1, 0.6, 0.3, 0.3);//设置小窗口属性
+    _kit.playerTrack = 2;//设置player音轨，因为主版本占用了0~1，建议设置为2
+    bRtc = NO;
+}
+
+-(void)onPlayBtn
+{
+    if (bRtc){
+        [_kit leaveChannel];
+    }
+    [_kit startPlayerWithUrl:[NSURL URLWithString:self.playerView.textHostUrl.text]];
+}
+-(void)onPauseBtn
+{
+    if (_kit.player && _kit.player.playbackState == MPMoviePlaybackStatePlaying) {
+        [_kit.player pause];
+    }
+    else if (_kit.player && _kit.player.playbackState == MPMoviePlaybackStatePaused){
+        [_kit.player play];
+    }
+}
+-(void)onStopBtn
+{
+    [_kit stopPlayer];
+}
 #pragma mark - 连麦配置
 - (void) setAgoraStreamerKitCfg {
     
@@ -199,11 +230,16 @@
 
 -(void)onJoinChannelBtn
 {
+    bRtc = YES;
+    if (_kit.player && _kit.player.playbackState == MPMoviePlaybackStatePlaying) {
+        [_kit stopPlayer];
+    }
     [_kit joinChannel:@"ksy24"];
 }
 
 -(void)onLeaveChannelBtn
 {
+    bRtc = NO;
     [_kit leaveChannel];
 }
 

@@ -15,6 +15,7 @@
     if (self) {
         _filterBtn = [self addButton:@"美颜"];
         _rtcBtn    = [self addButton:@"Agora连麦"];
+        _playBtn    = [self addButton:@"播放"];
         _backBtn   = [self addButton:@"返回菜单"
                               action:@selector(onBack:)];
         _backBtn.hidden = YES;
@@ -24,13 +25,14 @@
 }
 - (void)layoutUI{
     [super layoutUI];
-    [self putRow: @[_filterBtn, _rtcBtn, _backBtn]];
+    [self putRow: @[_filterBtn, _rtcBtn, _playBtn, _backBtn]];
     [self hideAllBtn:NO];
 }
 - (void)hideAllBtn: (BOOL) bHide {
     _backBtn.hidden   = !bHide; // 返回
     _filterBtn.hidden = bHide;
     _rtcBtn.hidden    = bHide;
+    _playBtn.hidden    = bHide;
 }
 - (IBAction)onBack:(id)sender {
     for (UIView * v in self.subviews){

@@ -14,7 +14,6 @@
  @warning kit只支持单实例推流，构造多个实例会出现异常
  */
 - (instancetype) initWithDefaultCfg:(id<KMCRtcDelegate>)delegate;
-
 #pragma 声网sdk相关
 /**
  @abstract rtc接口类
@@ -44,9 +43,36 @@
  @abstract 离开通道
  */
 -(void)leaveChannel;
-
-
+/**
+ @abstract 播放器
+ */
+@property (nonatomic, readonly) KSYMoviePlayerController * _Nonnull player;
+/**
+ @abstract 播放视频数据
+ */
+@property (nonatomic, readonly)KSYGPUPicInput         * _Nonnull playerYuvInput;
+/**
+ @abstract   开启播放器
+ @param playerUrl:播放视频的url
+ */
+-(void)startPlayerWithUrl:( NSURL* _Nullable )playerUrl;
+/**
+ @abstract 关闭播放器
+ */
+-(void)stopPlayer;
 #pragma 窗口相关配置
+/*
+ @abstract 播放窗口图层
+ */
+@property (nonatomic, readwrite) NSInteger playerLayer;
+/**
+ @abstract 播放音轨
+ */
+@property (nonatomic, readwrite) int playerTrack;
+/**
+ @abstract 播放窗口图层的大小
+ */
+@property (nonatomic, readwrite) CGRect playerRect;
 /*
  @abstract 小窗口图层
  */

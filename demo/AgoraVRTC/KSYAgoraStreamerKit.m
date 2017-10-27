@@ -24,8 +24,6 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
     asbd->mChannelsPerFrame = 1;
 }
 
-#if __arm__  || __arm64__
-
 @interface KSYAgoraStreamerKit() {
     AudioStreamBasicDescription _asbd;  // format description for audio data
 //    BOOL  kmcAuthPassed;
@@ -56,6 +54,7 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
     __weak typeof(self) weakSelf = self;
 
     _agoraKit = [[KMCAgoraVRTC alloc] initWithToken:@"7920903db27923b537ce1beedb976cd1" delegate:delegate];
+    _agoraKit.maxRetryAuthCnt = 3;
     _beautyOutput = nil;
     _callstarted = NO;
     _maskPicture = nil;
@@ -66,7 +65,7 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
     _localAudioPts = kCMTimeInvalid;
     
     fillAsbd(&_asbd, YES, sizeof(Float32));
-    
+
     self.videoProcessingCallback = ^(CMSampleBufferRef buf){
         weakSelf.videoPts= CMSampleBufferGetPresentationTimeStamp(buf);
     };
@@ -86,7 +85,7 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
             [weak_kit.aCapDev stopCapture];
             [weak_kit.aMixer processAudioData:NULL nbSample:0 withFormat:NULL timeinfo:(CMTimeMake(0, 0)) of:0];
             [weak_kit.aMixer setTrack:1 enable:YES];
-            [weak_kit.aMixer setMixVolume:1 of:1];
+            [weak_kit.aMixer setMixVolume:1.0 of:1];
             weak_kit.localAudioPts = kCMTimeInvalid;
             
             if(weak_kit.onChannelJoin)
@@ -197,6 +196,15 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
         _contentView = nil;
     }
     
+    if (_player){
+        [self stopPlayer];
+        _player = nil;
+    }
+    
+    if(_playerYuvInput){
+        _playerYuvInput = nil;
+    }
+    
     NSNotificationCenter* dc = [NSNotificationCenter defaultCenter];
     [dc removeObserver:self
                   name:AVAudioSessionInterruptionNotification
@@ -269,6 +277,12 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
     }
     else{
         [self removeElementInput:_uiElementInput callbackOutput:src];
+    }
+    
+    if (_playerYuvInput){
+        [self addPic:self.playerYuvInput  ToMixerAt:self.playerLayer];
+    }else{
+        [self clearMixerLayer:self.playerLayer];
     }
     
     // 混合后的图像输出到预览和推流
@@ -395,6 +409,50 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
         [vMixer[i] setPicAlpha:1.0f ofLayer:idx];
     }
 }
+#pragma mark -播放
+-(void)startPlayerWithUrl:( NSURL* _Nullable )playerUrl
+{
+    if (_player) {
+        [self stopPlayer];
+    }
+    
+    if(playerUrl) {
+        [self.aMixer setTrack:_playerTrack enable:YES];
+        [self.aMixer setMixVolume:1 of:_playerTrack];
+        BOOL shouldUseHWCodec = YES;
+        BOOL shouldAutoplay = YES;
+        BOOL shouldMute = NO;
+        _playerYuvInput = [[KSYGPUPicInput alloc] init];
+        _player = [[KSYMoviePlayerController alloc]initWithContentURL:playerUrl];
+        _player.videoDecoderMode = shouldUseHWCodec ? MPMovieVideoDecoderMode_Hardware : MPMovieVideoDecoderMode_Software;
+        _player.shouldAutoplay = shouldAutoplay;
+        _player.shouldMute = shouldMute;
+        __weak KSYAgoraStreamerKit * weak_kit = self;
+        _player.videoDataBlock = ^(CMSampleBufferRef buf){
+            CVPixelBufferRef pb = CMSampleBufferGetImageBuffer(buf);
+            [weak_kit.playerYuvInput forceProcessingAtSize:CGSizeMake(CVPixelBufferGetWidth(pb), CVPixelBufferGetHeight(pb))];
+            [weak_kit.playerYuvInput processPixelBuffer:CMSampleBufferGetImageBuffer(buf) time:CMTimeMake(2, 10)];
+        };
+        _player.audioDataBlock = ^(CMSampleBufferRef buf){
+            if ([weak_kit.streamerBase isStreaming]){
+                [weak_kit.aMixer processAudioSampleBuffer:buf of:weak_kit.playerTrack];
+            }
+        };
+    }
+    
+    [self setupRtcFilter:_curfilter];
+    [_player prepareToPlay];
+}
+
+-(void)stopPlayer{
+    if (_player) {
+        [_player stop];
+        _player    = nil;
+    }
+    _playerYuvInput = nil;
+    [self.aMixer setTrack:_playerTrack enable:NO];
+    [self setupRtcFilter:_curfilter];
+}
 
 #pragma mark -rtc
 -(void)joinChannel:(NSString *)channelName
@@ -498,6 +556,18 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
     }
 }
 
+-(void) setPlayerRect:(CGRect)rect
+{
+    _playerRect = rect;
+    KSYGPUPicMixer * vMixer[2] = {self.vPreviewMixer, self.vStreamMixer};
+    for (int i = 0; i<2; ++i) {
+        [vMixer[i]  removeAllTargets];
+        [vMixer[i] setPicRect:rect ofLayer:self.playerLayer];
+    }
+    [self.vPreviewMixer addTarget:self.preview];
+    [self.vStreamMixer  addTarget:self.gpuToStr];
+}
+
 -(void)setSelfInFront:(BOOL)selfInFront{
     _selfInFront = selfInFront;
     [self setupRtcFilter:_curfilter];
@@ -516,7 +586,6 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
 {
      _agoraKit.videoDataCallback = nil;
 }
-
 
 #pragma utility
 
@@ -611,21 +680,5 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
     return videoSize;
 }
 
-
 @end
-#else
-@implementation KSYRTCStreamerKit
 
--(void)stopRTCView{
-    
-}
-
-/**
- @abstract 设置美颜接口
- */
-- (void) setupRtcFilter:(GPUImageOutput<GPUImageInput> *) filter;
-{
-    
-}
-@end
-#endif
