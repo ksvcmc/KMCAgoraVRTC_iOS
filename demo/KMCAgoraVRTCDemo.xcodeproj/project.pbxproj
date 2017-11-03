@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0586E2361FA3383A009A1FA3 /* KSYPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0586E2341FA33839009A1FA3 /* KSYPlayView.m */; };
+		0586E2331FA32FED009A1FA3 /* KSYPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0586E2311FA32FED009A1FA3 /* KSYPlayView.m */; };
 		951EA14D1F29F0EA00151A76 /* KMCAgoraVRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FA012D1F29E8DD00B63B82 /* KMCAgoraVRTC.framework */; };
 		951EA14E1F29F0EA00151A76 /* KMCAgoraVRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95FA012D1F29E8DD00B63B82 /* KMCAgoraVRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95C902791F0CCADE00AC1FAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C902781F0CCADE00AC1FAA /* main.m */; };
@@ -48,8 +48,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0586E2341FA33839009A1FA3 /* KSYPlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSYPlayView.m; sourceTree = "<group>"; };
-		0586E2351FA33839009A1FA3 /* KSYPlayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSYPlayView.h; sourceTree = "<group>"; };
+		0586E2311FA32FED009A1FA3 /* KSYPlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSYPlayView.m; sourceTree = "<group>"; };
+		0586E2321FA32FED009A1FA3 /* KSYPlayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSYPlayView.h; sourceTree = "<group>"; };
 		95C902751F0CCADE00AC1FAA /* KMCAgoraVRTCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KMCAgoraVRTCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C902781F0CCADE00AC1FAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		95C9027A1F0CCADE00AC1FAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -235,8 +235,8 @@
 				95C902D61F0CD1C400AC1FAA /* KSYRTCAgoraVC.m */,
 				95C902D71F0CD1C400AC1FAA /* KSYRtcView.h */,
 				95C902D81F0CD1C400AC1FAA /* KSYRtcView.m */,
-				0586E2351FA33839009A1FA3 /* KSYPlayView.h */,
-				0586E2341FA33839009A1FA3 /* KSYPlayView.m */,
+				0586E2321FA32FED009A1FA3 /* KSYPlayView.h */,
+				0586E2311FA32FED009A1FA3 /* KSYPlayView.m */,
 				95C902D91F0CD1C400AC1FAA /* KSYStateLableView.h */,
 				95C902DA1F0CD1C400AC1FAA /* KSYStateLableView.m */,
 				95C902DB1F0CD1C400AC1FAA /* KSYStreamerVC.h */,
@@ -314,7 +314,7 @@
 				TargetAttributes = {
 					95C902741F0CCADE00AC1FAA = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 36PUU93BJ2;
+						DevelopmentTeam = ZGJ54Q7R45;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -377,7 +377,7 @@
 				95C902E11F0CD1C400AC1FAA /* KSYUIView.m in Sources */,
 				95C902EB1F0CD1C400AC1FAA /* KSYStreamerVC.m in Sources */,
 				95C902791F0CCADE00AC1FAA /* main.m in Sources */,
-				0586E2361FA3383A009A1FA3 /* KSYPlayView.m in Sources */,
+				0586E2331FA32FED009A1FA3 /* KSYPlayView.m in Sources */,
 				95C902E51F0CD1C400AC1FAA /* KSYMenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,7 +502,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 36PUU93BJ2;
+				DEVELOPMENT_TEAM = ZGJ54Q7R45;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -521,7 +521,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
-				DEVELOPMENT_TEAM = 36PUU93BJ2;
+				DEVELOPMENT_TEAM = ZGJ54Q7R45;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
