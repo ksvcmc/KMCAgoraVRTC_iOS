@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "KMCAgoraVRTC"
-  s.version      = "1.3.0"
+  s.version      = "1.4.0"
   s.summary      = "金山魔方视频连麦方案"
   s.ios.deployment_target = "8.0"
   s.description  = <<-DESC

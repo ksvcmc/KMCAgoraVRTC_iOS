@@ -430,7 +430,11 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
         __weak KSYAgoraStreamerKit * weak_kit = self;
         _player.videoDataBlock = ^(CMSampleBufferRef buf){
             CVPixelBufferRef pb = CMSampleBufferGetImageBuffer(buf);
-            [weak_kit.playerYuvInput forceProcessingAtSize:CGSizeMake(CVPixelBufferGetWidth(pb), CVPixelBufferGetHeight(pb))];
+            CGSize preSize = [weak_kit adjustVideoProfile:weak_kit.agoraKit.videoProfile];
+            CGSize rtcInputSize = CGSizeMake(CVPixelBufferGetWidth(pb),CVPixelBufferGetHeight(pb));
+            CGSize cropSz = [weak_kit calcCropSize:rtcInputSize to:preSize];
+            weak_kit.playerYuvInput.cropRegion = [weak_kit calcCropRect:rtcInputSize to:cropSz];
+            [weak_kit.playerYuvInput forceProcessingAtSize:preSize];
             [weak_kit.playerYuvInput processPixelBuffer:CMSampleBufferGetImageBuffer(buf) time:CMTimeMake(2, 10)];
         };
         _player.audioDataBlock = ^(CMSampleBufferRef buf){
@@ -510,9 +514,33 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
     [self.aMixer setTrack:1 enable:NO];
 }
 
+// 居中裁剪
+-(CGRect) calcCropRect: (CGSize) camSz to: (CGSize) outSz {
+    double x = (camSz.width  -outSz.width )/2/camSz.width;
+    double y = (camSz.height -outSz.height)/2/camSz.height;
+    double wdt = outSz.width/camSz.width;
+    double hgt = outSz.height/camSz.height;
+    return CGRectMake(x, y, wdt, hgt);
+}
+// 对 inSize 按照 targetSz的宽高比 进行裁剪, 得到最大的输出size
+-(CGSize) calcCropSize: (CGSize) inSz to: (CGSize) targetSz {
+    CGFloat preRatio = targetSz.width / targetSz.height;
+    CGSize cropSz = inSz; // set width
+    cropSz.height = cropSz.width / preRatio;
+    if (cropSz.height > inSz.height){
+        cropSz.height = inSz.height; // set height
+        cropSz.width  = cropSz.height * preRatio;
+    }
+    return cropSz;
+}
+
 -(void) defaultRtcVideoCallback:(CVPixelBufferRef)buf
 {
-    //NSLog(@"width:%zu,height:%zu",CVPixelBufferGetWidth(buf),CVPixelBufferGetHeight(buf));
+    CGSize preSize = [self adjustVideoProfile:_agoraKit.videoProfile];
+    CGSize rtcInputSize = CGSizeMake(CVPixelBufferGetWidth(buf),CVPixelBufferGetHeight(buf));
+    CGSize cropSz = [self calcCropSize:rtcInputSize to:preSize];
+    _rtcYuvInput.cropRegion = [self calcCropRect:rtcInputSize to:cropSz];
+    [_rtcYuvInput forceProcessingAtSize:preSize];
     [self.rtcYuvInput processPixelBuffer:buf time:CMTimeMake(2, 10)];
 }
 

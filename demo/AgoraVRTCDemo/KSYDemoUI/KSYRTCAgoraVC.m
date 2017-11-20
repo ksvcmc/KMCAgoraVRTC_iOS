@@ -16,6 +16,8 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 
+#define FLOAT_EQ( f0, f1 ) ( (f0 - f1 < 0.001)&& (f0 - f1 > -0.001) )
+
 @interface KSYRTCAgoraVC () <KMCRtcDelegate>{
     id _filterBtn;
     UILabel* label;
@@ -178,8 +180,12 @@
 - (void) setAgoraStreamerKitCfg {
     
     _kit.selfInFront = NO;
-    _kit.agoraKit.videoProfile = AgoraRtc_VideoProfile_DEFAULT;
-    //设置小窗口属性
+    CGFloat ratio = _kit.previewDimension.width / _kit.previewDimension.height;
+    if ( FLOAT_EQ( ratio, 16.0/9 ) || FLOAT_EQ( ratio,  9.0/16) ){
+        _kit.agoraKit.videoProfile = AgoraRtc_VideoProfile_DEFAULT;
+    }else{
+        _kit.agoraKit.videoProfile = AgoraRtc_VideoProfile_480P;
+    }    //设置小窗口属性
     _kit.winRect = CGRectMake(0.6, 0.6, 0.3, 0.3);//设置小窗口属性
     _kit.rtcLayer = 4;//设置小窗口图层，因为主版本占用了1~3，建议设置为4
     
