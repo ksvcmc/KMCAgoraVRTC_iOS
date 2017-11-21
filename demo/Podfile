@@ -12,6 +12,6 @@ target 'KMCAgoraVRTCDemo' do
   pod 'libksygpulive/KSYGPUResource'
   pod 'libksygpulive/libksygpulive'
   pod 'UICKeyChainStore', '~> 2.1.1'
-  pod 'AgoraRtcEngine_iOS', '1.10.0'
+  pod 'AgoraRtcEngine_iOS', '1.14.0'
 end
 
