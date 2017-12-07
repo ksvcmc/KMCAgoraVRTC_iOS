@@ -11,7 +11,7 @@ target 'KMCAgoraVRTCDemo' do
   pod 'MBProgressHUD'
   pod 'libksygpulive/KSYGPUResource'
   pod 'libksygpulive/libksygpulive'
-  pod 'UICKeyChainStore', '~> 2.1.1'
-  pod 'AgoraRtcEngine_iOS', '1.14.0'
+  #pod 'KMCAgoraVRTC'
+  pod 'KMCAgoraVRTC', :path => '../'
 end
 
