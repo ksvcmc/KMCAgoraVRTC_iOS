@@ -81,6 +81,11 @@
  @abstract 小窗口图层的大小
  */
 @property (nonatomic, readwrite) CGRect winRect;
+
+/**
+ @abstract 主播图层的大小
+ */
+@property (nonatomic, readwrite) CGRect camRect;
 /*
  @abstract 用户自定义图层
  */

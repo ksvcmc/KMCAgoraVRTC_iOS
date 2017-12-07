@@ -26,7 +26,7 @@
     _configLable.textAlignment = NSTextAlignmentCenter;
     // hostURL = rtmpSrv + streamName(随机数,避免多个demo推向同一个流
 //    NSString *rtmpSrv = @"rtmp://test.uplive.ksyun.com/live";
-    NSString *rtmpSrv = @"rtmp://test.uplive.ks-cdn.com/live";
+    NSString *rtmpSrv = @"rtmp://120.92.224.235/live";
     NSString *devCode = [ [KSYUIView getUuid] substringToIndex:3];
     NSString *url     = [  NSString stringWithFormat:@"%@/%@", rtmpSrv, devCode];
     _hostUrlUI = [self addTextField:url ];

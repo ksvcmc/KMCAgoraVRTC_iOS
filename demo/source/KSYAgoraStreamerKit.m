@@ -217,12 +217,40 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
 //                object:nil];
 }
 
+// 根据朝向, 判断是否需要交换宽和高
+-(CGSize) getDimension: (CGSize) sz
+           byOriention: (UIInterfaceOrientation) ori {
+    CGSize outSz = sz;
+    if ( ( ori == UIInterfaceOrientationPortraitUpsideDown ||
+          ori == UIInterfaceOrientationPortrait )) {
+        outSz.height = MAX(sz.width, sz.height);
+        outSz.width  = MIN(sz.width, sz.height);
+    }
+    else  {
+        outSz.height = MIN(sz.width, sz.height);
+        outSz.width  = MAX(sz.width, sz.height);
+    }
+    return outSz;
+}
+
+- (void) updatePreDimension {
+    CGSize _previewDimension = [self getDimension:self.previewDimension
+                               byOriention:self.videoOrientation];
+    CGSize  inSz     =  [self captureDimension];
+    inSz = [self getDimension:inSz byOriention:self.vCapDev.outputImageOrientation];
+    CGSize targetSize = CGSizeMake(_camRect.size.width*_previewDimension.width, _camRect.size.height*_previewDimension.height);
+    CGSize cropSz = [self calcCropSize:inSz to:targetSize];
+    self.capToGpu.cropRegion = [self calcCropRect:inSz to:cropSz];
+    self.capToGpu.outputRotation = kGPUImageNoRotation;
+    [self.capToGpu forceProcessingAtSize:_previewDimension];
+}
 
 - (void) setupRtcFilter:(GPUImageOutput<GPUImageInput> *) filter {
     _curfilter = filter;
     if (self.vCapDev  == nil) {
         return;
     }
+    
     // 采集的图像先经过前处理
     [self.capToGpu     removeAllTargets];
     GPUImageOutput* src = self.capToGpu;
@@ -582,6 +610,18 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
         [self.vPreviewMixer addTarget:self.preview];
         [self.vStreamMixer  addTarget:self.gpuToStr];
     }
+}
+
+-(void) setCamRect:(CGRect)rect
+{
+    _camRect = rect;
+    KSYGPUPicMixer * vMixer[2] = {self.vPreviewMixer, self.vStreamMixer};
+    for (int i = 0; i<2; ++i) {
+        [vMixer[i]  removeAllTargets];
+        [vMixer[i] setPicRect:rect ofLayer:self.cameraLayer];
+    }
+    [self.vPreviewMixer addTarget:self.preview];
+    [self.vStreamMixer  addTarget:self.gpuToStr];
 }
 
 -(void) setPlayerRect:(CGRect)rect

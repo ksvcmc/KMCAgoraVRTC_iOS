@@ -178,7 +178,7 @@
     _streamerBase.logBlock = ^(NSString* str){
         NSLog(@"%@", str);
     };
-    _hostURL = [NSURL URLWithString:@"rtmp://test.uplive.ksyun.com/live/123"];
+    _hostURL = [NSURL URLWithString:@"rtmp://120.92.224.235/live/123"];
 }
 - (void) setStreamerCfg { // must set after capture
     if (_streamerBase == nil) {

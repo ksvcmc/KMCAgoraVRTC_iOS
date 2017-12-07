@@ -186,6 +186,7 @@
     }else{
         _kit.agoraKit.videoProfile = AgoraRtc_VideoProfile_480P;
     }    //设置小窗口属性
+    _kit.camRect = CGRectMake(0.0, 0.0, 1.0, 1.0);//设置小窗口属性，可以调整camera窗口的位置和大小，这里设置成全屏显示
     _kit.winRect = CGRectMake(0.6, 0.6, 0.3, 0.3);//设置小窗口属性
     _kit.rtcLayer = 4;//设置小窗口图层，因为主版本占用了1~3，建议设置为4
     
