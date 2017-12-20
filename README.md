@@ -5,8 +5,7 @@
 ![Alt text](https://raw.githubusercontent.com/wiki/ksvcmc/KMCAgoraVRTC_Android/lianmai.jpg)
 
 ### PK连麦效果
-![pk_demo](https://github.com/ksvcmc/KMCAgoraVRTC_iOS/raw/add1v1Pic/screenshots/pk_demo.png)
- 
+![pk_demo](https://raw.githubusercontent.com/wiki/ksvcmc/KMCAgoraVRTC_Android/image/pk_demo.jpg)
 
 ## 鉴权
 SDK在使用时需要用token进行鉴权后方可使用，token申请方式见**接入步骤**部分;  
