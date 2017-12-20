@@ -255,11 +255,11 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
     [self.capToGpu     removeAllTargets];
     GPUImageOutput* src = self.capToGpu;
     
-    if(filter)
+    if(_curfilter)
     {
-        [self.filter removeAllTargets];
-        [src addTarget:self.filter];
-        src = self.filter;
+        [_curfilter removeAllTargets];
+        [src addTarget:_curfilter];
+        src = _curfilter;
     }
     // 组装图层
     if(_rtcYuvInput)
