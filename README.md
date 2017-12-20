@@ -5,7 +5,7 @@
 ![Alt text](https://raw.githubusercontent.com/wiki/ksvcmc/KMCAgoraVRTC_Android/lianmai.jpg)
 
 ### PK连麦效果
-![pk_demo](https://github.com/ksvcmc/KMCAgoraVRTC_iOS/screenshots/pk_demo.png)
+![pk_demo](https://github.com/ksvcmc/KMCAgoraVRTC_iOS/raw/add1v1Pic/screenshots/pk_demo.png)
  
 
 ## 鉴权
