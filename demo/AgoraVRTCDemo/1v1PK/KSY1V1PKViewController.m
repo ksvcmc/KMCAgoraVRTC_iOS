@@ -11,6 +11,7 @@
 #import <KMCAgoraVRTC/KMCAgoraVRTC.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 
+
 #define FLOAT_EQ( f0, f1 ) ( (f0 - f1 < 0.001)&& (f0 - f1 > -0.001) )
 
 //16进制颜色转换
@@ -43,10 +44,10 @@
     [super viewWillDisappear:animated];
     if (_kit) {
         [_kit stopPreview];
+        [_kit.streamerBase stopStream];
         [_kit leaveChannel];
         _kit = nil;
     }
- 
 }
 
 
@@ -66,7 +67,7 @@
         _kit.agoraKit.videoProfile = AgoraRtc_VideoProfile_480P;
     }    //设置小窗口属性
     
-    _kit.camRect = CGRectMake(0.0, 0.25, 0.5, 0.5);//设置小窗口属性，可以调整camera窗口的位置和大小，这里设置成全屏显示
+    _kit.camRect = CGRectMake(0.0, 0.0, 1.0, 1.0);//设置小窗口属性，可以调整camera窗口的位置和大小，这里设置成全屏显示
     _kit.winRect = CGRectMake(0.5, 0.25, 0.5, 0.5);//设置小窗口属性
     
     _kit.rtcLayer = 4;//设置小窗口图层，因为主版本占用了1~3，建议设置为4
@@ -118,7 +119,7 @@
 }
 
 -(UIView *)createUIView{
-
+    
     UIView *bgView = [[UIView alloc]initWithFrame:self.view.bounds];
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     gradientLayer.colors = @[(__bridge id)UIColorFromRGB(0XFFBBFF).CGColor, (__bridge id)UIColorFromRGB(0XFF83FA).CGColor,(__bridge id)UIColorFromRGB(0XE066FF).CGColor];
@@ -145,6 +146,29 @@
 {
     [_kit leaveChannel];
 }
+
+- (void)startStream
+{
+    if (_kit.streamerBase.streamState == KSYStreamStateIdle ||
+        _kit.streamerBase.streamState == KSYStreamStateError) {
+        NSString *rtmpSrv = @"rtmp://120.92.224.235/live";
+        NSString *devCode = [[self getUuid] substringToIndex:3];
+        NSString * _hostUrl = [  NSString stringWithFormat:@"%@/%@", rtmpSrv, devCode];
+        [_kit.streamerBase startStream:[NSURL URLWithString:_hostUrl]];
+    }
+}
+
+- (NSString *) getUuid{
+    return [[[[UIDevice currentDevice] identifierForVendor] UUIDString] lowercaseString];
+}
+
+- (void)stopStream
+{
+    if (_kit) {
+        [_kit.streamerBase stopStream];
+    }
+}
+
 - (void)creatBtn
 {
     UIButton *addBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -158,6 +182,18 @@
     [leaveBtn setTitle:@"离开频道" forState:UIControlStateNormal];
     leaveBtn.frame = CGRectMake(self.view.frame.size.width-110, 100, 100, 20);
     [self.view addSubview:leaveBtn];
+    
+    UIButton *streamBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [streamBtn addTarget:self action:@selector(startStream) forControlEvents:UIControlEventTouchUpInside];
+    [streamBtn setTitle:@"打开推流" forState:UIControlStateNormal];
+    streamBtn.frame = CGRectMake(10, 200, 100, 20);
+    [self.view addSubview:streamBtn];
+    
+    UIButton *stopStreamBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [stopStreamBtn addTarget:self action:@selector(stopStream) forControlEvents:UIControlEventTouchUpInside];
+    [stopStreamBtn setTitle:@"停止推流" forState:UIControlStateNormal];
+    stopStreamBtn.frame = CGRectMake(self.view.frame.size.width-110, 200, 100, 20);
+    [self.view addSubview:stopStreamBtn];
 }
 
 
@@ -167,6 +203,7 @@
 {
     if(_kit.callstarted){
         [_kit stopRTCView];
+        _kit.camRect = CGRectMake(0.0, 0.0, 1.0, 1.0);
         if(_kit.onCallStop)
             _kit.onCallStop(reason);
         _kit.callstarted = NO;
@@ -178,6 +215,7 @@
     if(!_kit.callstarted)
     {
         [_kit startRtcView];
+        _kit.camRect = CGRectMake(0.0, 0.25, 0.5, 0.5);
         if(_kit.onCallStart)
             _kit.onCallStart(200);
         _kit.callstarted = YES;
@@ -224,3 +262,4 @@
 
 
 @end
+
