@@ -1,4 +1,11 @@
 # 金山云魔方连麦API文档
+
+[![Apps Using](https://img.shields.io/cocoapods/at/KMCAgoraVRTC.svg?label=Apps%20Using%20KMCAgoraVRTC&colorB=28B9FE)](http://cocoapods.org/pods/KMCAgoraVRTC)[![Downloads](https://img.shields.io/cocoapods/dt/KMCAgoraVRTC.svg?label=Total%20Downloads%20KMCAgoraVRTC&colorB=28B9FE)](http://cocoapods.org/pods/KMCAgoraVRTC)
+
+[![Latest release](https://img.shields.io/github/release/ksvcmc/KMCAgoraVRTC_iOS.svg)](https://github.com/ksvcmc/KMCAgoraVRTC_iOS/releases/latest)
+[![CocoaPods platform](https://img.shields.io/cocoapods/p/KMCAgoraVRTC.svg)](https://cocoapods.org/pods/KMCAgoraVRTC)
+[![CocoaPods version](https://img.shields.io/cocoapods/v/KMCAgoraVRTC.svg?label=pod_github)](https://cocoapods.org/pods/KMCAgoraVRTC)
+
 ## 项目背景
 金山魔方是一个多媒体能力提供平台，通过统一接入API、统一鉴权、统一计费等多种手段，降低客户接入多媒体处理能力的代价，提供多媒体能力供应商的效率。 本文档主要针对视频连麦功能而说明。
 ## 效果展示
