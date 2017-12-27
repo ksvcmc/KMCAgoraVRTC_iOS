@@ -2,6 +2,7 @@
 
 [![Apps Using](https://img.shields.io/cocoapods/at/KMCAgoraVRTC.svg?label=Apps%20Using%20KMCAgoraVRTC&colorB=28B9FE)](http://cocoapods.org/pods/KMCAgoraVRTC)[![Downloads](https://img.shields.io/cocoapods/dt/KMCAgoraVRTC.svg?label=Total%20Downloads%20KMCAgoraVRTC&colorB=28B9FE)](http://cocoapods.org/pods/KMCAgoraVRTC)
 
+[![Build Status](https://travis-ci.org/ksvcmc/KMCAgoraVRTC_iOS.svg?branch=master)](https://travis-ci.org//ksvcmc/KMCAgoraVRTC_iOS)
 [![Latest release](https://img.shields.io/github/release/ksvcmc/KMCAgoraVRTC_iOS.svg)](https://github.com/ksvcmc/KMCAgoraVRTC_iOS/releases/latest)
 [![CocoaPods platform](https://img.shields.io/cocoapods/p/KMCAgoraVRTC.svg)](https://cocoapods.org/pods/KMCAgoraVRTC)
 [![CocoaPods version](https://img.shields.io/cocoapods/v/KMCAgoraVRTC.svg?label=pod_github)](https://cocoapods.org/pods/KMCAgoraVRTC)

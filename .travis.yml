@@ -1,0 +1,8 @@
+language: objective-c
+osx_image: xcode9
+xcode_workspace: demo/KMCAgoraVRTCDemo.xcworkspace
+xcode_scheme: KMCAgoraVRTCDemo
+script:
+    - cd demo
+    - pod install
+    - xcodebuild clean build -sdk iphonesimulator -workspace KMCAgoraVRTCDemo.xcworkspace -scheme KMCAgoraVRTCDemo CODE_SIGNING_REQUIRED=NO
