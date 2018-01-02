@@ -116,8 +116,6 @@
  */
 - (void) setupRtcFilter:(GPUImageOutput<GPUImageInput> *) filter;
 
-- (void)startRtcView;
 
-- (void)stopRTCView;
 @end
 

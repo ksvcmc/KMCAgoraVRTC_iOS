@@ -30,7 +30,7 @@
 
 @class AgoraRtcStats;
 
-typedef void (^RTCVideoDataBlock)(CVPixelBufferRef pixelBuffer);
+typedef void (^RTCVideoDataBlock)(CVPixelBufferRef pixelBuffer,unsigned int uid);
 typedef void (^RTCAudioDataBlock)(void* buffer,int sampleRate,int samples,int bytesPerSample,int channels,int64_t pts);
 
 
@@ -66,6 +66,8 @@ typedef void (^RTCAudioDataBlock)(void* buffer,int sampleRate,int samples,int by
 -(void)ProcessVideo:(CVPixelBufferRef)buf
            timeInfo:(CMTime)pts;
 
+
+
 /*
  @abstract 远端视频数据回调
  */
@@ -85,5 +87,7 @@ typedef void (^RTCAudioDataBlock)(void* buffer,int sampleRate,int samples,int by
  @abstract 当鉴权错误码是1004时，自动重新鉴权次数
  */
 @property (nonatomic, assign) int maxRetryAuthCnt;
+
+
 
 @end

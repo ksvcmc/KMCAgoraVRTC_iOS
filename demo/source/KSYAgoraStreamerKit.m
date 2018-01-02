@@ -3,6 +3,7 @@
 #import <libksygpulive/libksystreamerengine.h>
 
 #import <KMCAgoraVRTC/KMCAgoraVRTC.h>
+//#import "KMCAgoraVRTC.h"
 #import <GPUImage/GPUImage.h>
 #import "KSYAgoraStreamerKit.h"
 #import <mach/mach_time.h>
@@ -109,7 +110,7 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
     };
     
     //接收数据回调，放入yuvinput里面
-    _agoraKit.videoDataCallback=^(CVPixelBufferRef buf){
+    _agoraKit.videoDataCallback=^(CVPixelBufferRef buf,unsigned int uid){
         [weak_kit defaultRtcVideoCallback:buf];
     };
     
@@ -644,7 +645,7 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
 -(void)becomeActive
 {
     __weak KSYAgoraStreamerKit * weak_kit = self;
-    _agoraKit.videoDataCallback=^(CVPixelBufferRef buf){
+    _agoraKit.videoDataCallback=^(CVPixelBufferRef buf,unsigned int uid ){
         [weak_kit defaultRtcVideoCallback:buf];
     };
     _localAudioPts = kCMTimeInvalid;

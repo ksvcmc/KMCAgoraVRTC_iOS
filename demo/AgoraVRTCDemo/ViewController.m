@@ -18,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];//修改返回颜色
     self.title =@"连麦demo";
     [self.view addSubview:self.tbView];
 
@@ -47,8 +49,9 @@
     UIViewController *vc = [[NSClassFromString([dic valueForKey:@"className"]) alloc]init];
     vc.title = [dic objectForKey:@"title"];
     [self.navigationController pushViewController:vc animated:YES];
-}
+    
 
+}
 
 - (UITableView *)tbView
 {
@@ -68,7 +71,10 @@
         NSArray *arr = @[@{@"title":@"原始连麦版本",
                            @"className":@"KSYPresetCfgVC"},
                          @{@"title":@"1v1PK",
-                           @"className":@"KSY1V1PKViewController"}];
+                           @"className":@"KSY1V1PKViewController",},
+                         @{@"title":@"多人连麦",
+                           @"className":@"KSYMainViewController"}
+                         ];
         _array = [[NSMutableArray alloc]initWithArray:arr];
     }
     return _array;

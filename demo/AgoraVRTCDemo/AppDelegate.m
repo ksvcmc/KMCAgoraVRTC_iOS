@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "KSYMainViewController.h"
+
+#define kIsMultiAoraVR YES
 
 @interface AppDelegate ()
 
@@ -15,8 +18,37 @@
 @implementation AppDelegate
 
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    CGRect cframe = [[UIScreen mainScreen] bounds];
+    
+    self.window = [[UIWindow alloc] initWithFrame:cframe];
+    self.window.backgroundColor = [UIColor blackColor];
+    self.window.clipsToBounds = YES;
+    KSYMainViewController *rootVC = [[KSYMainViewController alloc]init];
+    UINavigationBar *bar = [UINavigationBar appearance];
+    //设置显示的颜色
+    bar.barTintColor = [UIColor colorWithRed:62/255.0 green:173/255.0 blue:176/255.0 alpha:1.0];
+    //设置字体颜色
+    bar.tintColor = [UIColor whiteColor];
+    [bar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    UINavigationController *  navController = [UINavigationController new];
+    navController.navigationBar.clipsToBounds = NO;
+    navController.navigationBar.hidden = NO;
+    
+    [navController.navigationBar
+     setBackgroundImage:[UIImage imageNamed:@"pixel_blank"]
+     forBarMetrics:UIBarMetricsDefault];
+    [navController.navigationBar
+     setShadowImage:[UIImage imageNamed:@"pixel_blank"]];
+    navController.navigationBar.barStyle = UIBarMetricsDefault;
+    
+    [navController pushViewController:rootVC animated:NO];
+    navController.navigationBar.tintColor = [UIColor whiteColor];
+    self.window.rootViewController = navController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
