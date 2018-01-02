@@ -9,6 +9,8 @@ target 'KMCAgoraVRTCDemo' do
 
   # Pods for AgoraVRTCDemo
   pod 'MBProgressHUD'
+  pod 'Masonry'
+  pod 'IQKeyboardManager'
   pod 'libksygpulive/KSYGPUResource'
   pod 'libksygpulive/libksygpulive'
   #pod 'KMCAgoraVRTC'
