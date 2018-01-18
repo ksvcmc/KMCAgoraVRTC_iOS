@@ -67,6 +67,7 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
 - (instancetype) initWithDefaultCfg:(id<KMCRtcDelegate>)delegate token:(NSString *)token
 {
     self = [super initWithDefaultCfg];
+    [self setAudioDataType:KSYAudioData_RawPCM];
     @KSYWeakObj(self);
     [self defaultInit];
     _agoraKit = [[KMCAgoraVRTC alloc] initWithToken:token delegate:delegate];

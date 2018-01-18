@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class KSYMultiAgoraStreamerKit;
+
 @interface KSYMenu : UIView
 
 // yes  打开 ，no 关闭
@@ -17,6 +19,8 @@
 @property (nonatomic,copy) void(^clickPlayBlock)(BOOL isOpen);
 @property (nonatomic,copy) void(^clickMuteBlock)(BOOL isOpen);
 @property (nonatomic,copy) void(^clickCameraBlock)(BOOL isOpen);
+
+- (instancetype)initWithMultiAgoraStreamerKit:(KSYMultiAgoraStreamerKit *)kit frame:(CGRect)frame;
 
 // YES  隐藏 ，NO 为显示
 - (void)hidden1V1Btn:(BOOL) isHidden;

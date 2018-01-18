@@ -51,10 +51,11 @@
     NSString *devCode = [ [KSYKitTool getUuid] substringToIndex:3];
     _hostUrl     = [NSString stringWithFormat:@"%@/%@", rtmpSrv, devCode];
     [self createView];
-    [self addMenu];
     [self initAgoraStreamerKit];
+    [self addMenu];
     [self joinChannel];
     [self addTextView];
+    self.textView.hidden = YES;
     
     @KSYWeakObj(self);
     //监听当前频道人数
@@ -391,8 +392,7 @@
 {
     if(!_menu)
     {
-        _menu = [[KSYMenu alloc]initWithFrame:CGRectMake(kDeviceWidth-75, kDeviceHeight-408, 44, 408)];
-        
+        _menu = [[KSYMenu alloc] initWithMultiAgoraStreamerKit:self.kit frame:CGRectMake(kDeviceWidth-75, kDeviceHeight-408, 44, 408)];
     }
     return _menu;
 }

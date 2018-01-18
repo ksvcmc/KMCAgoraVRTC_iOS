@@ -9,6 +9,7 @@
 #import "KSYMenu.h"
 #import "KSYHeader.h"
 #import "Masonry.h"
+#import "KSYMultiAgoraStreamerKit.h"
 
 #define kItemSize 44
 #define kItemMargn  20
@@ -28,38 +29,43 @@
 @property (nonatomic,assign)BOOL isMuteClick;
 @property (nonatomic,assign)BOOL isCameraClick;
 
-
+@property (nonatomic,weak)KSYMultiAgoraStreamerKit * kit;
 @end
 @implementation KSYMenu
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if(!self) return nil;
-    self.isMoreClick = NO;
-    self.isSelectScreenClick = YES;
-    [self setup];
+- (instancetype)initWithMultiAgoraStreamerKit:(KSYMultiAgoraStreamerKit *)kit frame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        _kit = kit;
+        self.isMoreClick = NO;
+        self.isSelectScreenClick = YES;
+        self.isInfoClick = YES;
+        _kit = kit;
+        [self setup];
+    }
     return self;
-    
 }
 
 - (void)hidden1V1Btn:(BOOL) isHidden
 {
-   self.selectScreenBtn.hidden = isHidden;
    if (isHidden) {
-      [self.selectScreenBtn setImage:[UIImage imageNamed:@"画中画"] forState:UIControlStateNormal];
+       [self.selectScreenBtn setImage:[UIImage imageNamed:@"分屏"] forState:UIControlStateNormal];
    }
 }
 
 - (void)selectScreenAction:(UIButton *)btn
 {
+    if (![_kit currentChannelHavePerson]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"多人连麦时才可修改RTC模式" message:nil delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:nil, nil];
+        [alert show];
+        return;
+    }
     if(self.isSelectScreenClick)
     {
-        [self.selectScreenBtn setImage:[UIImage imageNamed:@"分屏"] forState:UIControlStateNormal];
+        [self.selectScreenBtn setImage:[UIImage imageNamed:@"画中画"] forState:UIControlStateNormal];
     }
     else
     {
-        [self.selectScreenBtn setImage:[UIImage imageNamed:@"画中画"] forState:UIControlStateNormal];
+        [self.selectScreenBtn setImage:[UIImage imageNamed:@"分屏"] forState:UIControlStateNormal];
     }
     if(self.clickSelectScreenBlock)
     {
@@ -72,11 +78,11 @@
 {
     if(self.isInfoClick)
     {
-        [self.infoBtn setImage:[UIImage imageNamed:@"显示信息"] forState:UIControlStateNormal];
+        [self.infoBtn setImage:[UIImage imageNamed:@"关闭信息"] forState:UIControlStateNormal];
     }
     else
     {
-        [self.infoBtn setImage:[UIImage imageNamed:@"关闭信息"] forState:UIControlStateNormal];
+        [self.infoBtn setImage:[UIImage imageNamed:@"显示信息"] forState:UIControlStateNormal];
     }
     if(self.clickInfoBlock)
     {
@@ -107,11 +113,11 @@
 {
     if(self.isMuteClick)
     {
-        [self.muteBtn setImage:[UIImage imageNamed:@"开启麦克风"] forState:UIControlStateNormal];
+        [self.muteBtn setImage:[UIImage imageNamed:@"关闭麦克风"] forState:UIControlStateNormal];
     }
     else
     {
-        [self.muteBtn setImage:[UIImage imageNamed:@"关闭麦克风"] forState:UIControlStateNormal];
+        [self.muteBtn setImage:[UIImage imageNamed:@"开启麦克风"] forState:UIControlStateNormal];
     }
     if(self.clickMuteBlock)
     {
@@ -165,14 +171,14 @@
     self.playBtn.hidden = isHidden;
     self.muteBtn.hidden = isHidden;
     self.cameraPositionBtn.hidden = isHidden;
-
+    self.selectScreenBtn.hidden = isHidden;
 }
 
 - (void)setup
 {
     
     self.selectScreenBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.selectScreenBtn setImage:[UIImage imageNamed:@"画中画"] forState:UIControlStateNormal];
+    [self.selectScreenBtn setImage:[UIImage imageNamed:@"分屏"] forState:UIControlStateNormal];
     [self.selectScreenBtn addTarget:self action:@selector(selectScreenAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.selectScreenBtn];
     self.selectScreenBtn.hidden = YES;
@@ -189,7 +195,7 @@
     [self addSubview:self.playBtn];
     
     self.muteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.muteBtn setImage:[UIImage imageNamed:@"开启麦克风"] forState:UIControlStateNormal];
+    [self.muteBtn setImage:[UIImage imageNamed:@"关闭麦克风"] forState:UIControlStateNormal];
     [self.muteBtn addTarget:self action:@selector(muteAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.muteBtn];
     
