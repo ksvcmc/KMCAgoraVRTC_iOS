@@ -9,7 +9,7 @@
 #ifndef KMCDefines_h
 #define KMCDefines_h
 
-typedef enum : NSUInteger {
+typedef enum : NSInteger {
     /**
      错误参数
      */
