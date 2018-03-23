@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "KMCAgoraVRTC"
-  s.version      = "2.0.2"
+  s.version      = "2.0.3"
   s.summary      = "金山魔方视频连麦方案"
   s.ios.deployment_target = "8.0"
   s.description  = <<-DESC
@@ -29,4 +29,6 @@ Pod::Spec.new do |s|
 
   s.vendored_frameworks = "framework/KMCAgoraVRTC.framework"
   s.requires_arc = true
+
+  
 end

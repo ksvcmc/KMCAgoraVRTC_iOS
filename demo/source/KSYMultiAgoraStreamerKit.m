@@ -721,6 +721,15 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+- (int)adjustRecordingSignalVolume:(NSInteger)volume
+{
+    return [_agoraKit adjustRecordingSignalVolume:volume];
+}
+
+- (int)adjustPlaybackSignalVolume:(NSInteger)volume
+{
+    return [_agoraKit adjustPlaybackSignalVolume:volume];
+}
 
 
 
