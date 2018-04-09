@@ -292,6 +292,9 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
     if (!_picOutPut) {
         _picOutPut  =  [[KSYGPUPicOutput alloc] init];
         _picOutPut.bCustomOutputSize = YES;
+        CGSize expectSize = [KSYKitTool adjustVideoProfile:self.agoraKit.videoProfile];
+        CGSize cropSz = [KSYKitTool calcCropSize:self.capToGpu.outputSize to:expectSize];
+        _picOutPut.cropRegion = [KSYKitTool calcCropRect:self.capToGpu.outputSize to:cropSz];
         _picOutPut.outputSize = [KSYKitTool adjustVideoProfile:self.agoraKit.videoProfile];//发送size需要和videoprofile匹配
         _picOutPut.videoProcessingCallback = ^(CVPixelBufferRef pixelBuffer, CMTime timeInfo ){
             @KSYStrongObj(self)
@@ -358,17 +361,40 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
     
 }
 
+// 根据朝向, 判断是否需要交换宽和高
+-(CGSize) getDimension: (CGSize) sz
+           byOriention: (UIInterfaceOrientation) ori {
+    CGSize outSz = sz;
+    if ( ( ori == UIInterfaceOrientationPortraitUpsideDown ||
+          ori == UIInterfaceOrientationPortrait )) {
+        outSz.height = MAX(sz.width, sz.height);
+        outSz.width  = MIN(sz.width, sz.height);
+    }
+    else  {
+        outSz.height = MIN(sz.width, sz.height);
+        outSz.width  = MAX(sz.width, sz.height);
+    }
+    return outSz;
+}
+
 - (void) mixterBuffer:(CVPixelBufferRef)pixelBuffer itemId:(NSString *)itemId
 {
     if(!itemId)
         return;
     KSYAgoraPicModel *pic = [self getPicModelByItemId:itemId];
     KSYGPUPicInput  *  rtcYuvInput =pic.input;
-    CGSize preSize =[KSYKitTool adjustVideoProfile:self.agoraKit.videoProfile];
+    
+    CGSize winSize = [self getDimension:self.previewDimension
+                            byOriention:self.videoOrientation];
+    CGRect rect =     [self getRectFromIndex:pic.layerIndex];
+
+    CGSize previewSize = CGSizeMake(winSize.width * rect.size.width, winSize.height * rect.size.height);
+
     CGSize rtcInputSize = CGSizeMake(CVPixelBufferGetWidth(pixelBuffer),CVPixelBufferGetHeight(pixelBuffer));
-    CGSize cropSz = [KSYKitTool calcCropSize:rtcInputSize to:preSize];
+    CGSize cropSz = [KSYKitTool calcCropSize:rtcInputSize to:previewSize];
+
     rtcYuvInput.cropRegion = [KSYKitTool calcCropRect:rtcInputSize to:cropSz];
-    [rtcYuvInput forceProcessingAtSize:preSize];
+    [rtcYuvInput forceProcessingAtSize:previewSize];
     [rtcYuvInput processPixelBuffer:pixelBuffer time:CMTimeMake(2, 10)];
     
 }

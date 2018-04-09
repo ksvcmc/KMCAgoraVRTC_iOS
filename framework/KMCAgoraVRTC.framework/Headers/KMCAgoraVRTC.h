@@ -109,4 +109,34 @@ typedef void (^RTCAudioDataBlock)(void* buffer,int sampleRate,int samples,int by
  */
 - (int)adjustPlaybackSignalVolume:(NSInteger)volume;
 
+/**
+ * 启动本地音频文件播放
+ * @param filePath 待播放文件路径
+ * @param bLoop 是否循环播放
+ * @return 0: 方法调用成功, <0: 方法调用失败
+ * @discussion: 本方法需要在连麦成功后调用方可正常播放，如果尚未开始连麦，播放本地音频文件请使用自定义方法
+ */
+- (int) playBGM:(NSString *)filePath bLoop:(BOOL)bLoop;
+
+/**
+ * 暂停/恢复本地音频文件播放
+ * @param filePath 待播放文件路径
+ * @param bPause 是否暂停播放
+ * @return 0: 方法调用成功, <0: 方法调用失败
+ */
+- (int) pauseBGM:(BOOL)bPause;
+
+/**
+ * 停止本地音频文件播放
+ * @return 0: 方法调用成功, <0: 方法调用失败
+ */
+- (int) stopBGM;
+
+/**
+ * 设置本地音频文件播放的音量
+ * @param volume 音量范围为[0 - 100]
+ * @return 0: 方法调用成功, <0: 方法调用失败
+ */
+- (int) setBGMVolume:(double)volume;
+
 @end

@@ -21,12 +21,18 @@
 }
 
 + (CGSize) calcCropSize: (CGSize) inSz to: (CGSize) targetSz {
-    CGFloat preRatio = targetSz.width / targetSz.height;
-    CGSize cropSz = inSz; // set width
-    cropSz.height = cropSz.width / preRatio;
-    if (cropSz.height > inSz.height){
-        cropSz.height = inSz.height; // set height
-        cropSz.width  = cropSz.height * preRatio;
+    CGSize cropSz = CGSizeZero;
+    CGFloat inRatio = inSz.width / inSz.height;
+    CGFloat targetRatio = targetSz.width / targetSz.height;
+    if(inRatio >= targetRatio)
+    {
+        cropSz.height = inSz.height;
+        cropSz.width = targetRatio * inSz.height;
+    }
+    else
+    {
+        cropSz.width = inSz.width;
+        cropSz.height = inSz.width / targetRatio;
     }
     return cropSz;
 }

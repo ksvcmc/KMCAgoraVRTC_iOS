@@ -3,7 +3,6 @@
 #import <libksygpulive/libksystreamerengine.h>
 
 #import <KMCAgoraVRTC/KMCAgoraVRTC.h>
-//#import "KMCAgoraVRTC.h"
 #import <GPUImage/GPUImage.h>
 #import "KSYAgoraStreamerKit.h"
 #import <mach/mach_time.h>
@@ -504,6 +503,10 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
     __weak KSYAgoraStreamerKit * weak_kit = self;
     _beautyOutput  =  [[KSYGPUPicOutput alloc] init];
     _beautyOutput.bCustomOutputSize = YES;
+    
+    CGSize expectSize = [self adjustVideoProfile:_agoraKit.videoProfile];
+    CGSize cropSz = [self calcCropSize:self.capToGpu.outputSize to:expectSize];
+    _beautyOutput.cropRegion = [self calcCropRect:self.capToGpu.outputSize to:cropSz];
     _beautyOutput.outputSize = [self adjustVideoProfile:_agoraKit.videoProfile];//发送size需要和videoprofile匹配
     _beautyOutput.videoProcessingCallback = ^(CVPixelBufferRef pixelBuffer, CMTime timeInfo ){
             [weak_kit.agoraKit ProcessVideo:pixelBuffer timeInfo:timeInfo];
@@ -553,23 +556,32 @@ static inline void fillAsbd(AudioStreamBasicDescription*asbd,BOOL bFloat, UInt32
 }
 // 对 inSize 按照 targetSz的宽高比 进行裁剪, 得到最大的输出size
 -(CGSize) calcCropSize: (CGSize) inSz to: (CGSize) targetSz {
-    CGFloat preRatio = targetSz.width / targetSz.height;
-    CGSize cropSz = inSz; // set width
-    cropSz.height = cropSz.width / preRatio;
-    if (cropSz.height > inSz.height){
-        cropSz.height = inSz.height; // set height
-        cropSz.width  = cropSz.height * preRatio;
+    CGSize cropSz = CGSizeZero;
+    CGFloat inRatio = inSz.width / inSz.height;
+    CGFloat targetRatio = targetSz.width / targetSz.height;
+    if(inRatio >= targetRatio)
+    {
+        cropSz.height = inSz.height;
+        cropSz.width = targetRatio * inSz.height;
+    }
+    else
+    {
+        cropSz.width = inSz.width;
+        cropSz.height = inSz.width / targetRatio;
     }
     return cropSz;
 }
 
 -(void) defaultRtcVideoCallback:(CVPixelBufferRef)buf
 {
-    CGSize preSize = [self adjustVideoProfile:_agoraKit.videoProfile];
+    CGSize winSize = [self getDimension:self.previewDimension
+                               byOriention:self.videoOrientation];
+    CGSize previewSize = CGSizeMake(winSize.width * _winRect.size.width, winSize.height * _winRect.size.height);
     CGSize rtcInputSize = CGSizeMake(CVPixelBufferGetWidth(buf),CVPixelBufferGetHeight(buf));
-    CGSize cropSz = [self calcCropSize:rtcInputSize to:preSize];
+    CGSize cropSz = [self calcCropSize:rtcInputSize to:previewSize];
+    
     _rtcYuvInput.cropRegion = [self calcCropRect:rtcInputSize to:cropSz];
-    [_rtcYuvInput forceProcessingAtSize:preSize];
+    [_rtcYuvInput forceProcessingAtSize:previewSize];
     [self.rtcYuvInput processPixelBuffer:buf time:CMTimeMake(2, 10)];
 }
 
